@@ -14,3 +14,33 @@
  *= require_self
  */
 @import "bootstrap";
+
+#wrapper {
+	width: 100%;
+	overflow:hidden;
+}
+
+.navbar {
+	background-color: pink;
+}
+
+a.nav-link {
+	color:#FFFFFF;
+}
+
+a.navbar-brand {
+	color:#FFFFFF;
+}
+
+a:hover {
+	color:grey;
+}
+
+.main-visual {
+    width: 100%;
+    height: 600px;
+	background-image : url(image4.jpg);
+	background-size: cover;
+}
+
+
