@@ -9,4 +9,6 @@ class Member < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+
+  enum withdrawal_status: { 有効: 0, 無効: 1 }
 end
