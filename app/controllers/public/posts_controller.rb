@@ -2,6 +2,8 @@ class Public::PostsController < ApplicationController
 
 
   def index
+    @post = Post.last
+    @posts = Post.order(id: :desc).offset(1)
   end
 
   def new
@@ -23,10 +25,16 @@ class Public::PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+    redirect_to public_post_path(@post)
+    else
+    render "edit"
+    end
   end
 
   def show
-  	@post = Post.find(:id)
+  	@post = Post.find(params[:id])
   end
 
   def destroy
@@ -37,6 +45,6 @@ class Public::PostsController < ApplicationController
   
   private
   def post_params
-  	  params.require(:post).permit(:title, :content, :image_id, :post_genre_id, :member_id)
+  	  params.require(:post).permit(:title, :content, :image, :post_genre_id, :member_id)
   end
 end

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
   <div class="row">
   	<div class="col-3">
   	  <div class="sidebar">
@@ -7,7 +7,7 @@
   	</div>
     <div class="col-9">
       <h3>投稿編集</h3>
-      <%= form_for(@post, url: '/public/post', html: {method: 'PATCH'}) do |form| %>
+      <%= form_for(@post, url: public_post_path, html: {method: 'PATCH'}) do |form| %>
       <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
@@ -25,4 +25,3 @@
 
     </div>
   </div>
-</div>
