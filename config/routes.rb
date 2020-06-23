@@ -29,8 +29,11 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
+    get '/orders/thanks' => 'orders#thanks'
+    get '/posts/favorite' => 'posts#favorite'
     resources :items
     resources :item_genres
+    resources :cart_items
     resources :post_genres
     resources :posts do
       resources :post_comments, only: %i[create destroy]

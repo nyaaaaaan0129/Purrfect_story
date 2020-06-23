@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
   <div class="row">
   	<div class="col-3">
   	  <div class="sidebar">
@@ -8,21 +8,20 @@
     <div class="col-9">
       <h3>新規投稿</h3>
       <%= form_for(@post, url: '/public/posts', html: {method: 'POST'}) do |form| %>
-      <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, 'data-provider': :summernote %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-  
-<% end %>  
-
+        <div class="field">
+          <%= form.label :title %>
+          <%= form.text_field :title %>
+        </div>
+        <div class="field">
+          <%= form.attachment_field :image, placeholder: "商品画像" %>
+        </div>
+        <div class="field">
+          <%= form.label :content %>
+          <%= form.text_area :content, 'data-provider': :summernote %>
+        </div>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
     </div>
   </div>
-</div>
