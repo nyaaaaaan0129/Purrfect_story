@@ -1,2 +1,18 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+  	<div class="col-3">
+  	  <div class="sidebar">
+        <%= render "public/shared/sidebar" %>
+  	  </div>
+  	</div>
+    <div class="col-9">
+      <h3>投稿詳細</h3>
+      <div class="post_show_title">
+        <%= @post.title %>
+      </div>
+      <div class="post_show_content">
+      	<%= @post.content.html_safe %>
+      </div>
+    </div>
+  </div>
+</div>

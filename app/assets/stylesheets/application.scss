@@ -14,6 +14,10 @@
  *= require_self
  */
 @import "bootstrap";
+@import "summernote-bs4";
+
+
+
 
 /*application.html.erbここから*/
 
@@ -52,6 +56,7 @@ a:hover {
 /*shared/_sidebar.html.erbここから*/
 
 .sidebar_table {
+    width: 200px;
 	border: 1px solid;
 	margin: 60px;
 }
@@ -111,4 +116,48 @@ a:hover {
 .all_post_title {
 	width:370px;
 	margin:20px;
+}
+
+/*posts/index.html.erbここまで*/
+
+
+/*items/index.html.erbここから*/
+
+.item_image {
+	width: 200px;
+	height: 150px;
+	background-color:pink;
+}
+
+.all_item {
+	margin:20px;
+	float:left;
+}
+
+.all_items_header {
+	text-align:center;
+	margin:70px 0 50px 0;
+}
+
+/*items/index.html.erbここまで*/
+
+/*items/show.html.erbここから*/
+
+.item_show_image {
+	width: 400px;
+	height: 300px;
+	background-color:pink;
+	float:left;
+}
+
+.item_show_header {
+	text-align:center;
+	margin:70px 0 50px 0;
+}
+
+.item_show_text {
+    margin-left: 20px;
+	width: 400px;
+	height: 300px;
+	float:left;
 }
