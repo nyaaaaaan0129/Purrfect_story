@@ -72,3 +72,5 @@ gem 'pry-byebug', group: :development
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'summernote-rails', '~> 0.8.10.0'
+gem 'simple_form', '4.0.1'
