@@ -83,3 +83,74 @@ Member.create!(
     }
   ]
 )
+
+ItemGenre.create!(
+ [
+  {
+    name: "ごはん",
+    valid_invalid_status: 0
+  },
+  {
+    name: "おもちゃ",
+    valid_invalid_status: 0
+  },
+  {
+    name: "ベッド",
+    valid_invalid_status: 0
+  },
+  {
+    name: "トイレ用品",
+    valid_invalid_status: 0
+  },
+  {
+    name: "ケア用品",
+    valid_invalid_status: 0
+  }
+ ]
+)
+
+
+Item.create!(
+ [
+  {
+    item_genre_id: 1,
+    item_name: "美味しいご飯マグロ味",
+    explanation: "１番人気のマグロ味のご飯です。たまのご褒美に。",
+    unit_price_without_tax: 200,
+    sale_status: 0,
+    image: open("./db/images/pet_food_cat_can.png")
+  },
+  {
+    item_genre_id: 2,
+    item_name: "猫じゃらし（緑）",
+    explanation: "カシャカシャ音がする食いつき抜群の猫じゃらしです。",
+    unit_price_without_tax: 400,
+    sale_status: 0,
+    image: open("./db/images/pet_nekojarashi.png")
+  },
+  {
+    item_genre_id: 3,
+    item_name: "猫ちぐら",
+    explanation: "夏は涼しく冬は暖かい、取り合いになること間違いなしの猫ちぐらです。",
+    unit_price_without_tax: 3000,
+    sale_status: 0,
+    image: open("./db/images/pet_nekotsugura.png")
+  },
+  {
+    item_genre_id: 4,
+    item_name: "匂わない優秀猫砂",
+    explanation: "うんちやおしっこの匂いを素早く吸収してくれる猫のトイレ砂です。",
+    unit_price_without_tax: 1000,
+    sale_status: 0,
+    image: open("./db/images/pet_nekosuna.png")
+  },
+  {
+    item_genre_id: 5,
+    item_name: "壁に貼れる爪とぎ",
+    explanation: "壁に貼れるタイプの爪とぎです。よく猫ちゃんが爪とぎしてしまう壁部分に貼りましょう。",
+    unit_price_without_tax: 1000,
+    sale_status: 0,
+    image: open("./db/images/cat_tsumetogi.png")
+  }
+  ]
+)

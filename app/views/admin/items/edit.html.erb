@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+  	  <div class="col-1"></div>
+  	  <div class="col-4">
+	    <div class="admin_item_new">
+	      <div class="admin_item_edit_header">
+	      	<h3>商品編集</h3>
+	      </div>
+	      <div class="admin_item_edit_image">
+	      	 <%= form_for(@item, url: admin_item_path(@item), html: {method: 'PATCH'}) do |form| %>
+	      	 <div class="field">
+             <%= form.attachment_field :image, placeholder: "商品画像" %>
+             </div>
+	      </div>
+		</div>
+	  </div>
+	  <div class="col-6">
+	  	<div class="admin_item_new_text">
+		  	<table>
+		  		<tr>
+		  		  <th>商品名</th>
+		  		  <td>
+		  		  	<div class="field">
+			          
+			          <%= form.text_field :item_name %>
+			        </div>
+		  		  </td>
+		  		</tr>
+		  		<tr>
+		  		  <th>商品説明</th>
+		  		  <td>
+		  		  	<div class="field">
+			          
+			          <%= form.text_area :explanation %>
+			        </div>
+		  		  </td>
+		  		</tr>
+		  		<tr>
+		  		  <th>ジャンル</th>
+		  		  <td>
+		  		  	<div class="field">
+			          
+			          <%= form.collection_select :item_genre_id, ItemGenre.all, :id, :name %>
+			        </div>
+		  		  </td>
+		  		</tr>
+		  		<tr>
+		  		  <th>税抜価格</th>
+		  		  <td>
+		  		  	<%= form.text_field :unit_price_without_tax %>
+		  		  </td>
+		  		</tr>
+		  		<tr>
+		  		  <th>販売ステータス</th>
+		  		  <td>
+		  		  	<%= form.select :sale_status, ["販売中", "販売停止"] %>
+		  		  </td>
+		  		</tr>
+		  	</table>
+		  	<div class="actions">
+			          <%= form.submit %>
+			        </div>
+			        <% end %>
+	        </div>
+	  <div class="col-1"></div>
+  </div>
+
+</div>

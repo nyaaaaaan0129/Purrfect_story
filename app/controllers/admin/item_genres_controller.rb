@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Admin::ItemGenresController < ApplicationController
-  def index; end
+  def index
+  	@item_genres = ItemGenre.all
+  end
 
   def create; end
 
