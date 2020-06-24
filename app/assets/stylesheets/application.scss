@@ -190,7 +190,7 @@ a:hover {
 
 /*cart_items/index.html.erbここまで*/
 
-/*orders/thanks.html.erbここまで*/
+/*orders/thanks.html.erbここから*/
 
 .thanks-image {
     width:450px;
@@ -210,4 +210,43 @@ a:hover {
 .thanks-text {
 	line-height:350px;
     margin-left:70px;
+}
+
+/*orders/thanks.html.erbここまで*/
+
+/*admin/admins/top.html.erbここから*/
+
+.admin_top_text {
+	margin-top:100px;
+}
+
+.admin-top-header {
+	margin-top:50px;
+	background-color:#FFCCCC;
+}
+
+/*admin/admins/top.html.erbここまで*/
+
+/*admin/items/index.html.erbここから*/
+
+.admin_all_items {
+	margin-top:100px;
+}
+
+/*admin/items/index.html.erbここまで*/
+
+
+/*admin/items/show.html.erbここから*/
+
+.admin_item_show_header {
+	margin-top:50px;
+	background-color:#FFCCCC;
+}
+
+.admin_item_show_image {
+	margin-top:50px;
+}
+
+.admin_item_show_text {
+	margin-top:150px;
 }
