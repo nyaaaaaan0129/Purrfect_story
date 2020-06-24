@@ -5,12 +5,10 @@
 	</div>
   </div>
   <div class="row">
-  	<div class="col-1"></div>
-  	<div class="col-10">
-  		<div class="admin_item_genre_edit_form">
-	  		<%= form_for(@item_genre, url: admin_item_genre_path(@item_genre), html: {method: 'PATCH'}) do |form| %>
+    <div class="admin_post_genre_edit_form">
+	  	<%= form_for(@post_genre, url: admin_post_genre_path(@post_genre), html: {method: 'PATCH'}) do |form| %>
 	  		<div class="field radio_buttons">
-	          <%= form.label :商品ジャンル %>
+	          <%= form.label :投稿ジャンル %>
 	          <%= form.text_field :name %>
 	        </div>
 	        <div class="field radio_buttons">
@@ -23,8 +21,7 @@
 	          <%= form.submit "更新" %>
 	        </div>
 
-	        <% end %>
-        </div>
-  	</div>
+	    <% end %>
+    </div>
   </div>
 </div>
