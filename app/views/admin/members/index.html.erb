@@ -1,1 +1,34 @@
-admin members index
+<div class="container">
+  <div class="row">
+	<div class="admin_item_new_header">
+		<h3>ジャンル一覧・追加</h3>
+	</div>
+  </div>
+  <div class="row">
+  	<div class="col-1"></div>
+  	<div class="col-10">
+  		<div class="admin_post_genre_index">
+	  		<table class="table table-bordered">
+				  <thead>
+				  	<tr>
+				  	  <th>ジャンル</th>
+				  	  <th>ステータス</th>
+				  	  <th></th>
+				  	</tr>
+			    </thead>
+		      <tbody>
+		      	<% @post_genres.each do |post_genre| %>
+		      	<tr>
+		      		<td><%= post_genre.name %></td>
+		      		<td><%= post_genre.valid_invalid_status %></td>
+              <td>
+                <%= link_to "編集する", edit_admin_post_genre_path(post_genre), class:"btn btn-info" %>
+              </td>
+		      	</tr>
+		      	<% end %>
+		      </tbody>
+			  </table>
+	  	</div>
+  	</div>
+  </div>
+</div>

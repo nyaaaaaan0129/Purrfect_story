@@ -154,3 +154,33 @@ Item.create!(
   }
   ]
 )
+
+
+PostGenre.create!(
+ [
+  {
+    name: "幸せになった話",
+    valid_invalid_status: 0
+  },
+  {
+    name: "里親募集中",
+    valid_invalid_status: 0
+  },
+  {
+    name: "驚いた話",
+    valid_invalid_status: 0
+  },
+  {
+    name: "役に立つ話",
+    valid_invalid_status: 0
+  },
+  {
+    name: "可愛いうちの子みてください！",
+    valid_invalid_status: 0
+  },
+  {
+    name: "その他",
+    valid_invalid_status: 0
+  }
+ ]
+)
