@@ -1,1 +1,44 @@
-admin members show
+<div class="container">
+  <div class="row">
+  	<div class="col-2"></div>
+    <div class="col-8">
+    	<h3>会員詳細</h3>
+    	<table class="table-bordered">
+    		<tr>
+    		  <th>お名前（非公開）</th>
+    		  <td><%= @member.last_name %> <%= current_member.first_name %></td>
+    		</tr>
+    		<tr>
+    		  <th>お名前（非公開）</th>
+    		  <td><%= @member.last_name_kana %> <%= current_member.first_name_kana %></td>
+    		</tr>
+    		<tr>
+    		  <th>ニックネーム（公開されるお名前）</th>
+    		  <td><%= @member.nickname %></td>
+    		</tr>
+    		<tr>
+    		  <th>Email</th>
+    		  <td><%= @member.email %></td>
+    		</tr>
+    		<tr>
+    		  <th>電話番号</th>
+    		  <td><%= @member.phone_number %></td>
+    		</tr>
+    		<tr>
+    		  <th>郵便番号</th>
+    		  <td><%= @member.postal_code %></td>
+    		</tr>
+    		<tr>
+    		  <th>住所</th>
+    		  <td><%= @member.address %></td>
+    		</tr>
+            <tr>
+              <th>会員ステータス</th>
+              <td>
+                <%= @member.withdrawal_status %>
+                </td>
+            </tr>
+    	</table>
+    </div>
+  </div>
+</div>

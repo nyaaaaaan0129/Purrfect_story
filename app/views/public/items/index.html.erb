@@ -10,50 +10,27 @@
   	  </div>
   	</div>
     <div class="col-9">
-      <h3 class="all_items_header">商品一覧(全×件)</h3>
-      <div class="all_items">
-	      	<div class="all_item item1">
-	      		<div class="item_image"></div>
-	      		<div class="item_name">商品名</div>
-	      		<div class="item_price">¥1,000</div>
-	      	</div>
-	      	<div class="all_item item2">
-	      		<div class="item_image"></div>
-	      		<div class="item_name">商品名</div>
-	      		<div class="item_price">¥1,000</div>
-	      	</div>
-	      	<div class="all_item item3">
-	      		<div class="item_image"></div>
-	      		<div class="item_name">商品名</div>
-	      		<div class="item_price">¥1,000</div>
-	      	</div>
-	      	<div class="all_item item4">
-	      		<div class="item_image"></div>
-	      		<div class="item_name">商品名</div>
-	      		<div class="item_price">¥1,000</div>
-	      	</div>
-	      	<div class="all_item item5">
-	      		<div class="item_image"></div>
-	      		<div class="item_name">商品名</div>
-	      		<div class="item_price">¥1,000</div>
-	      	</div>
-	      	<div class="all_item item6">
-	      		<div class="item_image"></div>
-	      		<div class="item_name">商品名</div>
-	      		<div class="item_price">¥1,000</div>
-	      	</div>
-	      	<div class="all_item item7">
-	      		<div class="item_image"></div>
-	      		<div class="item_name">商品名</div>
-	      		<div class="item_price">¥1,000</div>
-	      	</div>
-	      	<div class="all_item item8">
-	      		<div class="item_image"></div>
-	      		<div class="item_name">商品名</div>
-	      		<div class="item_price">¥1,000</div>
-	      	</div>
-
-	      </div>
+      <h3 class="all_items_header">商品一覧(全<%= @items.count %>件)</h3>
+        <div class="all_items">
+      	<% @items.each do |item| %>
+      	  <%= link_to public_item_path(item) do %>
+	      	  <div class="item_each_contents">
+		          <div class="item_each_image">
+		            <%= attachment_image_tag item, :image, size: "300x300", fallback: "no_image_item.png" %>
+		          </div>
+		          <div class="item_each_text">
+		          	<div class="item_each_text_name">
+				      <%= item.item_name %>
+				    </div>
+				    <div class="item_each_text_unit_price_without_tax">
+				      <%= item.unit_price_without_tax %>
+				    </div>
+				  </div>
+			  </div>
+			<% end %>
+        <% end %>
+	    </div>
+      </div>
     </div>
   </div>
 </div>

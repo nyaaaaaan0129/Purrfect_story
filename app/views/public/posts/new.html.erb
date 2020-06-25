@@ -13,12 +13,19 @@
       <h3>新規投稿</h3>
       <%= form_for(@post, url: '/public/posts', html: {method: 'POST'}) do |form| %>
         <div class="field">
-          <%= form.label :title %>
+          <%= form.label :タイトル %>
           <%= form.text_field :title %>
         </div>
         <div class="field">
+          <%= form.label :インデックス画像 %>
           <%= form.attachment_field :image, placeholder: "インデックス画像" %>
         </div>
+
+        <div class="field">
+                <%= form.label :投稿ジャンル %>
+                <%= form.collection_select :post_genre_id, PostGenre.all, :id, :name %>
+        </div>
+
         <div class="field">
           <%= form.label :content %>
           <%= form.text_area :content, 'data-provider': :summernote %>

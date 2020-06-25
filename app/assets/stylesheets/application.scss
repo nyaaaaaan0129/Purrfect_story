@@ -89,12 +89,12 @@ a:hover {
 	margin:70px 0 50px 0;
 }
 
+
 .first_post_image {
-	width:780px;
-	height:500px;
-	background-color:pink;
 	margin:20px;
 }
+
+
 
 .first_post_title{
 	width:780px;
@@ -106,12 +106,15 @@ a:hover {
 	float:left;
 }
 
+img {
+	object-fit:cover;
+}
+
 .all_post_image {
-	width:370px;
-	height:300px;
-	background-color:pink;
 	margin:20px;
 }
+
+
 
 .all_post_title {
 	width:370px;
@@ -259,4 +262,27 @@ a:hover {
 .radio_buttons {
 	float:left;
 	margin-right:15px;
+}
+
+
+/*admin/item_genres/index.html.erbここまで*/
+
+/*public/items/index.html.erbここから*/
+
+.item_each_contents {
+	float:left;
+	margin:20px;
+}
+
+.item_each_image {
+	border: 2px solid;
+}
+
+/*public/items/index.html.erbここまで*/
+
+/*public/items/show.html.erbここから*/
+
+
+.public_item_show_text {
+	margin-top:100px;
 }
