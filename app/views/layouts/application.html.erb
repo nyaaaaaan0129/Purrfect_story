@@ -23,13 +23,13 @@
               <% if member_signed_in? %>
               <li class="nav-link">ようこそ<%= current_member.nickname %>さん！</li>
               <li class="nav-item">
-                <%= link_to "マイページ", public_members_path, class:"nav-link"%>
+                <%= link_to "マイページ", public_member_path(current_member.id), class:"nav-link"%>
               </li>
               <li class="nav-item">
                 <%= link_to "カート", public_members_path, class:"nav-link"%>
               </li>
               <li class="nav-item">
-                <%= link_to "商品一覧", public_members_path, class:"nav-link"%>
+                <%= link_to "商品一覧", public_items_path, class:"nav-link"%>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

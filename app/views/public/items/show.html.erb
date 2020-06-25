@@ -4,23 +4,48 @@
       </div>
     </div>
   <div class="row">
+    <div class="col-12">
+      <div class="public_item_show_header">
+          <h3>商品詳細</h3>
+        </div>
+    </div>
+  </div>
+  <div class="row">
   	<div class="col-3">
   	  <div class="sidebar">
         <%= render "public/shared/sidebar" %>
   	  </div>
   	</div>
-    <div class="col-9">
-      <h3 class="item_show_header">商品詳細</h3>
-      <div class="item_show">
-      	<div class="item_show_image"></div>
-      	<div class="item_show_text">
-      		<h4 class="item_show_name">美味しいご飯７歳以上の猫ちゃん用</h4>
-      		<div class="item_show_explanation">
-      			商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です商品の説明です
-      		</div>
-      		<div class="item_show_price">¥1,000</div>
-      	</div>
-      </div>
+    <div class="col-4">
+      <div class="public_item_show">
+        <div class="public_item_show_image">
+          <%= attachment_image_tag @item, :image, size: "300x300", fallback: "no_image_item.png" %>
+        </div>
     </div>
+    </div>
+  <div class="col-5">
+      <div class="public_item_show_text">
+        <table>
+          <tr>
+            <th>商品名</th>
+            <td><%= @item.item_name %></td>
+          </tr>
+          <tr>
+            <th>商品説明</th>
+            <td><%= @item.explanation %></td>
+          </tr>
+          <tr>
+            <th>税込価格（税抜価格）</th>
+            <td><%= (@item.unit_price_without_tax*1.1).floor %>円　(<%= @item.unit_price_without_tax %>円)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="cart_create">
+        <%= form_for @cart_item, url: public_cart_items_path(@cart_item) do |f| %>
+        <%= f.hidden_field :item_id, :value => @item.id%>
+        <%= f.number_field :number_of_items , placeholder: "個数選択", min: 1, max: 20 %> <!-- f.selectでも可。placeholderで空欄時に個数選択を表示。選択数の最低値を設定するためにminを設定。 -->
+        <%= f.submit "カートに入れる" ,class: 'btn btn-primary' %>
+        <% end %>
+      </div>
   </div>
 </div>

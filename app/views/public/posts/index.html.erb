@@ -11,12 +11,16 @@
   	</div>
     <div class="col-9">
       <h3 class="all_posts_header">投稿一覧</h3>
+      <%= link_to public_post_path(@post) do %>
       <div class="first_post">
-            <div class="first_post_image"></div>
+            <div class="first_post_image">
+              <%= attachment_image_tag @post, :image, size: "780x500", fallback: "no_image.jpg" %>
+            </div>
             <div class="first_post_title"><h4>
               <%= @post.title %>
             </h4></div>
       </div>
+      <% end %>
     </div>
   </div>
   <div class="row">
@@ -24,12 +28,16 @@
     <div class="col-9">
       <div class="all_posts">
         <% @posts.each do |post| %>
-          <div class="all_posts_box second">
-            <div class="all_post_image"></div>
-            <div class="all_post_title">
-              <h5><%= post.title %></h5>
+        <%= link_to public_post_path(post) do %>
+            <div class="all_posts_box second">
+              <div class="all_post_image">
+                <%= attachment_image_tag post, :image, size: "370x300", fallback: "no_image.jpg" %>
+              </div>
+              <div class="all_post_title">
+                <h5><%= post.title %></h5>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>

@@ -39,7 +39,7 @@ Rails.application.routes.draw do
       resources :post_comments, only: %i[create destroy]
       resource :favorites, only: %i[create destroy]
     end
-    resource :members
+    resources :members
     resources :orders
     resources :order_items
   end

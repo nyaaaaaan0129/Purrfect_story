@@ -1,1 +1,92 @@
-admin members edit
+<div class="container">
+  <div class="row">
+  	  <div class="col-1"></div>
+  	  <div class="col-10">
+	    <div class="public_member_edit">
+	      <div class="public_member_edit_header">
+	      	<h3>会員情報編集</h3>
+	      </div>
+	      <div class="public_member_edit_form">
+	      	 <%= form_for(@member, url: public_member_path(@member), html: {method: 'PATCH'}) do |form| %>
+	      	 <table class="table-bordered">
+    		<tr>
+    		  <th>お名前（非公開）</th>
+    		  <td>
+    		  	<div class="field">
+			      <%= form.text_field :last_name %>
+			    </div>
+			    <div class="field">
+			      <%= form.text_field :first_name %>
+			    </div>
+    		  </td>
+    		</tr>
+    		<tr>
+    		  <th>お名前　カナ（非公開）</th>
+    		  <td>
+    		  	<div class="field">
+			      <%= form.text_field :last_name_kana %>
+			    </div>
+			    <div class="field">
+			      <%= form.text_field :first_name_kana %>
+			    </div>
+    		  </td>
+    		</tr>
+    		<tr>
+    		  <th>ニックネーム（公開されるお名前）</th>
+    		  <td>
+    		  	<div class="field">
+			      <%= form.text_field :nickname %>
+			    </div>
+    		  	</td>
+    		</tr>
+    		<tr>
+    		  <th>Email</th>
+    		  <td>
+    		  	<div class="field">
+			      <%= form.email_field :email %>
+			    </div>
+    		  </td>
+    		</tr>
+    		<tr>
+    		  <th>電話番号</th>
+    		  <td>
+    		  	<div class="field">
+			      <%= form.text_field :phone_number %>
+			    </div>
+    		  </td>
+    		</tr>
+    		<tr>
+    		  <th>郵便番号</th>
+    		  <td>
+    		  	<div class="field">
+			      <%= form.text_field :postal_code %>
+			    </div>
+    		  	</td>
+    		</tr>
+    		<tr>
+    		  <th>住所</th>
+    		  <td>
+    		  	<div class="field">
+			      <%= form.text_field :address %>
+			    </div>
+    		  	</td>
+    		</tr>
+            <tr>
+              <th>会員ステータス</th>
+              <td>
+                <div class="field">
+                  <%= form.text_field :withdrawal_status %>
+                </div>
+                </td>
+            </tr>
+    	  </table>
+	  	  <div class="actions">
+		    <%= form.submit %>
+		  </div>
+		  <% end %>
+          </div>
+        </div>
+	  <div class="col-1"></div>
+    </div>
+  </div>
+</div>
