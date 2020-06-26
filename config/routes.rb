@@ -31,6 +31,10 @@ Rails.application.routes.draw do
   namespace :public do
     get '/orders/thanks' => 'orders#thanks'
     get '/posts/favorite' => 'posts#favorite'
+    get '/orders/confirm' => 'orders#confirm'
+    post '/orders/confirm' => 'orders#confirm'
+    get '/orders/thanks' => 'orders#thanks'
+    get '/members/withdrawal' => 'members#withdrawal'
     resources :items
     resources :item_genres
     resources :cart_items
