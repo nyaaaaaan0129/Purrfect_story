@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     post '/orders/confirm' => 'orders#confirm'
     get '/orders/thanks' => 'orders#thanks'
     get '/members/withdrawal' => 'members#withdrawal'
+    put '/members/:id/destroy' =>'members#destroy'
     resources :items
     resources :item_genres
     resources :cart_items
@@ -43,7 +44,7 @@ Rails.application.routes.draw do
       resources :post_comments, only: %i[create destroy]
       resource :favorites, only: %i[create destroy]
     end
-    resources :members
+    resources :members, only:%i[edit update show]
     resources :orders
     resources :order_items
   end

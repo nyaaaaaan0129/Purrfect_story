@@ -5,7 +5,7 @@
   	</div>
   </div>
   <div class="row">
-  	<div class="col-12">
+  	<div class="col-9">
   		<table>
   			<tr>
   				<th>購入者</th>
@@ -34,6 +34,25 @@
   			</tr>
   		</table>
   	</div>
+    <div class="col-3">
+      <table>
+        <tr>
+          <th>商品合計</th>
+          <td><%= @order.total_fee %></td>
+          <td>円</td>
+        </tr>
+        <tr>
+          <th>送料</th>
+          <td><%= @order.postage %></td>
+          <td>円</td>
+        </tr>
+        <tr>
+          <th>請求金額合計</th>
+          <td><%= (@order.total_fee+@order.postage) %></td>
+          <td>円</td>
+        </tr>
+      </table>
+    </div>
   </div>
   <div class="row">
   	<div class="col-12">

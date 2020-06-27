@@ -11,16 +11,21 @@
   	</div>
     <div class="col-9">
       <h3 class="all_posts_header">投稿一覧</h3>
-      <%= link_to public_post_path(@post) do %>
-      <div class="first_post">
-            <div class="first_post_image">
-              <%= attachment_image_tag @post, :image, size: "780x500", fallback: "no_image.jpg" %>
-            </div>
-            <div class="first_post_title"><h4>
-              <%= @post.title %>
-            </h4></div>
+      <div class="firs_post">
+        <%= link_to public_post_path(@post) do %>
+          <div class="first_post_content">
+                <div class="first_post_image">
+                  <%= attachment_image_tag @post, :image, size: "780x500", fallback: "no_image.jpg" %>
+                </div>
+                <div class="first_post_title"><h4>
+                  <%= @post.title %>
+                </h4></div>
+          </div>
+        <% end %>
+        <div class="row">
+          <div class="first_post_number_of_comments">コメント<%= @post.post_comments.count %>件</div>
+        </div>
       </div>
-      <% end %>
     </div>
   </div>
   <div class="row">
@@ -36,9 +41,12 @@
               <div class="all_post_title">
                 <h5><%= post.title %></h5>
               </div>
+              <% end %>
+              <div class="row">
+                <div class="first_post_number_of_comments">コメント<%= post.post_comments.count %>件</div>
+              </div>
             </div>
           <% end %>
-        <% end %>
       </div>
     </div>
   </div>

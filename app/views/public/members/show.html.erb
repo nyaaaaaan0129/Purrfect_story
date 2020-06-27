@@ -44,6 +44,9 @@
     <div class="col-8">
         <%= link_to "注文履歴一覧", public_orders_path, class:"btn btn-primary" %>
         <%= link_to "登録情報を編集する", edit_public_member_path, class:"btn btn-primary" %>
+        <% if member_signed_in? && @member.id == current_member.id %>
+        <%= link_to "退会する", public_path(current_member), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" %>
+<% end %>
     </div>
   </div>
 </div>
