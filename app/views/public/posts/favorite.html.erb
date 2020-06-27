@@ -7,13 +7,18 @@
   	<div class="col-3">
   	  <div class="sidebar">
         <%= render "public/shared/sidebar" %>
+        <% @favorites.each do |favorite| %>
+          <% post = Post.find_by(id: favorite.post_id) %>
+          <%= post.title %>
+        <% end %>
   	  </div>
   	</div>
     <div class="col-9">
       <h3 class="all_posts_header">いいねした投稿一覧</h3>
       <div class="first_post">
             <div class="first_post_image"></div>
-            <div class="first_post_title"><h4>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</h4></div>
+            <div class="first_post_title"><h4>
+            </h4></div>
       </div>
     </div>
   </div>

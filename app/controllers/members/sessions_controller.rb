@@ -20,6 +20,18 @@ class Members::SessionsController < Devise::SessionsController
 
   # protected
 
+  def reject_member
+    @member = Member.find_by(email: params[:member][:email].downcase)
+    if @member
+      if (@member.valid_password?(params[:member][:password]) && (@member.active_for_authentication? == false))
+        flash[:error] = "退会済みです。"
+        redirect_to new_member_session_path
+      end
+    else
+      flash[:error] = "必須項目を入力してください。"
+    end
+  end
+
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])

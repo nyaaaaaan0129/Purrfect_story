@@ -35,12 +35,18 @@ class Public::PostsController < ApplicationController
 
   def show
   	@post = Post.find(params[:id])
+    @post_comments = @post.post_comments
+    @post_comment = PostComment.new
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to public_posts_path
   end
 
   def favorite
+    @favorites = Favorite.where(member_id: current_member.id)
   end
   
   private
