@@ -1,0 +1,34 @@
+  <div class="container-fluid">
+    <div class="row">
+      <div class="main-visual">
+      </div>
+    </div>
+	<div class="row">
+	  <div class="col-1"></div>
+	  <div class="col-10">
+	  	<div class="public_orders_new_header">
+	  	  <h3>注文情報入力</h3>
+	  	</div>
+	  	<div class="public_orders_new_form">
+	  		<%= form_with(model: @order, local: true, url:public_orders_confirm_path, method: :post) do |f| %>
+	  		<h5>支払い方法</h5>
+	  		<div class="field">
+	  			<%= f.radio_button :payment_method, 1, checked: "checked"%> クレジットカード 
+	  		</div>
+	  		<div class="field">
+	  			<%= f.radio_button :payment_method, 0 %> 銀行振込 
+	  		</div>
+	  		<h5>お届け先</h5>
+	  		<div class="field">
+	  		<%= f.radio_button :address_number,1,checked: "checked" %> ご自身の住所 <br>
+            
+            	<%= current_member.postal_code %> <%= current_member.address %><br><%= current_member.last_name %><%= current_member.first_name %>
+            </div>
+            <div class="field">
+            	<%= f.radio_button :address_number,2 %> 応援したい会員を選択<br>
+            	<%= f.collection_select(:address, Member.all, :id, :nickname)%>
+            </div>
+                <%= f.submit "確認画面に進む", class: "btn btn-primary text-center" %>
+            <% end %>
+	  	</div>
+	  </div>

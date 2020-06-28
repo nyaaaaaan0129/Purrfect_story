@@ -14,3 +14,284 @@
  *= require_self
  */
 @import "bootstrap";
+@import "summernote-bs4";
+
+
+
+
+/*application.html.erbここから*/
+
+#wrapper {
+	width: 100%;
+	overflow:hidden;
+}
+
+.navbar {
+	background-color: pink;
+}
+
+a.nav-link {
+	color:#FFFFFF;
+}
+
+a.navbar-brand {
+	color:#FFFFFF;
+}
+
+a:hover {
+	color:grey;
+}
+
+.main-visual {
+    width: 100%;
+    height: 600px;
+	background-image : url(image4.jpg);
+	background-size: cover;
+	margin-bottom: 100px;
+}
+
+/*application.html.erbここまで*/
+
+
+/*shared/_sidebar.html.erbここから*/
+
+.sidebar_table {
+    width: 200px;
+	border: 1px solid;
+	margin: 60px;
+}
+
+/*shared/_sidebar.html.erbここまで*/
+
+/*homes/top.html.erbここから*/
+
+.new_post_header {
+	margin-bottom: 50px;
+}
+
+.new_post {
+	margin:20px;
+	float:left;
+}
+
+.post_image {
+	width: 200px;
+	height: 150px;
+	background-color:pink;
+}
+
+/*homes/top.html.erbここまで*/
+
+/*posts/index.html.erbここから*/
+
+.all_posts_header {
+	text-align:center;
+	margin:70px 0 50px 0;
+}
+
+
+.first_post_image {
+	margin:20px;
+}
+
+
+
+.first_post_title{
+	width:780px;
+	margin:20px;
+}
+
+
+.all_posts_box {
+	float:left;
+}
+
+img {
+	object-fit:cover;
+}
+
+.all_post_image {
+	margin:20px;
+}
+
+
+
+.all_post_title {
+	width:370px;
+	margin:20px;
+}
+
+/*posts/index.html.erbここまで*/
+
+
+/*items/index.html.erbここから*/
+
+.item_image {
+	width: 200px;
+	height: 150px;
+	background-color:pink;
+}
+
+.all_item {
+	margin:20px;
+	float:left;
+}
+
+.all_items_header {
+	text-align:center;
+	margin:70px 0 50px 0;
+}
+
+/*items/index.html.erbここまで*/
+
+/*items/show.html.erbここから*/
+
+.item_show_image {
+	width: 400px;
+	height: 300px;
+	background-color:pink;
+	float:left;
+}
+
+.item_show_header {
+	text-align:center;
+	margin:70px 0 50px 0;
+}
+
+.item_show_text {
+    margin-left: 20px;
+	width: 400px;
+	height: 300px;
+	float:left;
+}
+
+/*items/show.html.erbここまで*/
+
+/*cart_items/index.html.erbここから*/
+
+.destroy_all {
+	margin-top:20px;
+}
+
+.total_price_text {
+	width:100px;
+	height:50px;
+	border: 1px solid;
+	float:left;
+}
+
+.total_price_price {
+	width:100px;
+	height:50px;
+	border: 1px solid;
+	float:left;
+}
+
+.cart_next {
+	text-align:center;
+}
+
+/*cart_items/index.html.erbここまで*/
+
+/*orders/thanks.html.erbここから*/
+
+.thanks-image {
+    width:450px;
+    height:550px;
+	background-image: url(image1.jpg);
+	background-size:cover;
+	margin: 50px auto;
+}
+
+.thanks-message {
+	width: 400px;
+	height:330px;
+	background-image: url(fukidashi.png);
+	background-size:cover;
+}
+
+.thanks-text {
+	line-height:350px;
+    margin-left:70px;
+}
+
+/*orders/thanks.html.erbここまで*/
+
+/*admin/admins/top.html.erbここから*/
+
+.admin_top_text {
+	margin-top:100px;
+}
+
+.admin-top-header {
+	margin-top:50px;
+	background-color:#FFCCCC;
+}
+
+/*admin/admins/top.html.erbここまで*/
+
+/*admin/items/index.html.erbここから*/
+
+.admin_all_items {
+	margin-top:100px;
+}
+
+/*admin/items/index.html.erbここまで*/
+
+
+/*admin/items/show.html.erbここから*/
+
+.admin_item_show_header {
+	margin-top:50px;
+	background-color:#FFCCCC;
+}
+
+.admin_item_show_image {
+	margin-top:50px;
+}
+
+.admin_item_show_text {
+	margin-top:150px;
+}
+
+/*admin/items/show.html.erbここまで*/
+
+/*admin/item_genres/index.html.erbここから*/
+
+
+.radio_buttons {
+	float:left;
+	margin-right:15px;
+}
+
+
+/*admin/item_genres/index.html.erbここまで*/
+
+/*public/items/index.html.erbここから*/
+
+.item_each_contents {
+	float:left;
+	margin:20px;
+}
+
+.item_each_image {
+	border: 2px solid;
+}
+
+/*public/items/index.html.erbここまで*/
+
+/*public/items/show.html.erbここから*/
+
+
+.public_item_show_text {
+	margin-top:100px;
+}
+
+/*public/items/index.html.erbここまで*/
+
+
+/*public/orders/index.html.erbここから*/
+
+.order_item {
+	width:400px;
+}

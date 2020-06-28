@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+  	  <div class="col-1"></div>
+  	  <div class="col-4">
+	    <div class="admin_item_show">
+	      <div class="admin_item_show_header">
+	      	<h3>商品詳細</h3>
+	      </div>
+	      <div class="admin_item_show_image">
+	      	<%= attachment_image_tag @item, :image, size: "300x300", fallback: "no_image_item.png" %>
+	      </div>
+		</div>
+	  </div>
+	  <div class="col-6">
+	  	<div class="admin_item_show_text">
+		  	<table>
+		  		<tr>
+		  		  <th>商品名</th>
+		  		  <td><%= @item.item_name %></td>
+		  		</tr>
+		  		<tr>
+		  		  <th>商品説明</th>
+		  		  <td><%= @item.explanation %></td>
+		  		</tr>
+		  		<tr>
+		  		  <th>ジャンル</th>
+		  		  <td><%= @item.item_genre.name %></td>
+		  		</tr>
+		  		<tr>
+		  		  <th>税込価格（税抜価格）</th>
+		  		  <td><%= (@item.unit_price_without_tax*1.1).floor %>円　(<%= @item.unit_price_without_tax %>円)</td>
+		  		</tr>
+		  		<tr>
+		  		  <th>販売ステータス</th>
+		  		  <td><%= @item.sale_status %></td>
+		  		</tr>
+		  	</table>
+	    </div>
+	  <div class="col-1"></div>
+  </div>
+
+</div>

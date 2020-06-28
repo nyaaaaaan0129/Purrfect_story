@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+  	<div class="col-12">
+  		<h3>注文履歴詳細</h3>
+  	</div>
+  </div>
+  <div class="row">
+  	<div class="col-9">
+  		<table>
+  			<tr>
+  				<th>購入者</th>
+  				<td><%= @order.member.last_name %><%= @order.member.first_name %></td>
+  			</tr>
+  			<tr>
+  				<th>配送先</th>
+  				<td><%= @order.postal_code %> <%= @order.address %><br>
+  					<%= @order.name %>
+  				</td>
+  			</tr>
+  			<tr>
+  				<th>支払い方法</th>
+  				<td><%= @order.payment_method %></td>
+  			</tr>
+  			<tr>
+  				<th>注文ステータス</th>
+  				<td>
+  					<%= form_for(@order, url:admin_order_path, html: {method: 'PATCH'}) do |form| %>
+  					<%= form.select :order_status, ['入金待ち', '入金確認', '発送準備中', '発送済'] %>
+  					<div class="actions">
+					    <%= form.submit %>
+					  </div>
+					<% end %>
+  				</td>
+  			</tr>
+  		</table>
+  	</div>
+    <div class="col-3">
+      <table>
+        <tr>
+          <th>商品合計</th>
+          <td><%= @order.total_fee %></td>
+          <td>円</td>
+        </tr>
+        <tr>
+          <th>送料</th>
+          <td><%= @order.postage %></td>
+          <td>円</td>
+        </tr>
+        <tr>
+          <th>請求金額合計</th>
+          <td><%= (@order.total_fee+@order.postage) %></td>
+          <td>円</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+  	<div class="col-12">
+  		<table class="table">
+			  <thead class="thead-dark">
+			  	<tr>
+			  	  <th>商品名</th>
+			  	  <th>単価（税込）</th>
+			  	  <th>数量</th>
+			  	  <th>小計</th>
+			  	</tr>
+		      </thead>
+		      <tbody>
+		      	<% @order_item.each do |order_item| %>
+		      	<tr>
+		      		<td><%= order_item.item.item_name %></td>
+		      		<td><%= order_item.items_tax_included_price %></td>
+		      		<td><%= order_item.number_of_items %></td>
+		      		<td><%= (order_item.items_tax_included_price*order_item.number_of_items).floor %></td>
+		      	</tr>
+		      	<% end %>
+		      </tbody>
+			</table>
+  	</div>
+  </div>
+</div>
+

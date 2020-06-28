@@ -1,0 +1,36 @@
+    <div class="container-fluid">
+      <div class="row">
+        <div class="main-visual">
+      </div>
+    </div>
+  <div class="row">
+  	<div class="col-3">
+  	  <div class="sidebar">
+        <%= render "public/shared/sidebar" %>
+  	  </div>
+  	</div>
+    <div class="col-9">
+      <h3 class="all_items_header">商品一覧(全<%= @items.count %>件)</h3>
+        <div class="all_items">
+      	<% @items.each do |item| %>
+      	  <%= link_to public_item_path(item) do %>
+	      	  <div class="item_each_contents">
+		          <div class="item_each_image">
+		            <%= attachment_image_tag item, :image, size: "300x300", fallback: "no_image_item.png" %>
+		          </div>
+		          <div class="item_each_text">
+		          	<div class="item_each_text_name">
+				      <%= item.item_name %>
+				    </div>
+				    <div class="item_each_text_unit_price_without_tax">
+				      <%= item.unit_price_without_tax %>
+				    </div>
+				  </div>
+			  </div>
+			<% end %>
+        <% end %>
+	    </div>
+      </div>
+    </div>
+  </div>
+</div>

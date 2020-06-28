@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="main-visual">
+  </div>
+    </div>
+  <div class="row">
+  	<div class="col-1"></div>
+    <div class="col-10">
+        <table class="table">
+			  <thead class="thead-dark">
+			  	<tr>
+			  	  <th>注文日</th>
+			  	  <th>配送先</th>
+			  	  <th>注文商品</th>
+			  	  <th>支払金額</th>
+			  	  <th>ステータス</th>
+			  	  <th></th>
+			  	</tr>
+		      </thead>
+		      <tbody>
+		      	<% @orders.each do |order| %>
+		      	<tr>
+		      		<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+		      		<td><%= order.address %></td>
+		      		<td><div class="order_item">
+		      			<% order.order_items.each do |order_item| %>
+                        <%= order_item.item.item_name %>/
+                        <% end %>
+                        </div>
+		      		</td>
+		      		<td><%= order.total_fee %></td>
+		      		<td><%= order.order_status %></td>
+		      		<td><%= link_to "注文詳細", public_order_path(order) %></td>
+		      	</tr>
+		      	<% end %>
+		      </tbody>
+			</table>
+	</div>
+  </div>
+</div>

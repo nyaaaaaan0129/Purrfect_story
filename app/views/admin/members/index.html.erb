@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+	<div class="admin_members_header">
+		<h3>会員一覧</h3>
+	</div>
+  </div>
+  <div class="row">
+  	<div class="col-1"></div>
+  	<div class="col-10">
+  		<div class="admin_members_index">
+	  		<table class="table table-bordered">
+				  <thead>
+				  	<tr>
+				  	  <th>会員ID</th>
+				  	  <th>氏名</th>
+				  	  <th>氏名（カナ）</th>
+				  	  <th>ニックネーム</th>
+				  	  <th>会員ステータス</th>
+				  	  <th></th>
+				  	</tr>
+			    </thead>
+		      <tbody>
+		      	<% @members.each do |member| %>
+		      	<tr>
+		      		<td><%= member.id %></td>
+		      		<td><%= member.last_name %><%= member.first_name %></td>
+		      		<td><%= member.last_name_kana %><%= member.first_name_kana %></td>
+		      		<td><%= member.nickname %></td>
+		      		<td><%= member.withdrawal_status %></td>
+              <td>
+                <%= link_to "会員詳細", admin_member_path(member), class:"btn btn-info" %>
+              </td>
+		      	</tr>
+		      	<% end %>
+		      </tbody>
+			  </table>
+	  	</div>
+  	</div>
+  </div>
+</div>

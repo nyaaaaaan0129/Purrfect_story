@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+	<div class="admin_item_edit_header">
+		<h3>ジャンル一覧・追加</h3>
+	</div>
+  </div>
+  <div class="row">
+  	<div class="col-1"></div>
+  	<div class="col-10">
+  		<div class="admin_item_genre_edit_form">
+	  		<%= form_for(@item_genre, url: admin_item_genre_path(@item_genre), html: {method: 'PATCH'}) do |form| %>
+	  		<div class="field radio_buttons">
+	          <%= form.label :商品ジャンル %>
+	          <%= form.text_field :name %>
+	        </div>
+	        <div class="field radio_buttons">
+	          <%= form.radio_button :valid_invalid_status, "有効" ,checked: "checked" %>　有効
+	        </div>
+	        <div class="field radio_buttons">
+	          <%= form.radio_button :valid_invalid_status, "無効" %>　無効
+	        </div>
+	        <div class="actions radio_buttons">
+	          <%= form.submit "更新" %>
+	        </div>
+
+	        <% end %>
+        </div>
+  	</div>
+  </div>
+</div>

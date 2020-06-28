@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+  	  <div class="col-1"></div>
+  	  <div class="col-10">
+	    <div class="admin_all_items">
+			<table class="table">
+			  <thead class="thead-dark">
+			  	<tr>
+			  	  <th>商品ID</th>
+			  	  <th>商品名</th>
+			  	  <th>税抜価格</th>
+			  	  <th>ジャンル</th>
+			  	  <th>ステータス</th>
+			  	</tr>
+		      </thead>
+		      <tbody>
+		      	<% @items.each do |item| %>
+		      	<tr>
+		      		<td><%= item.id %></td>
+		      		<td><%= item.item_name %></td>
+		      		<td><%= item.unit_price_without_tax %></td>
+		      		<td><%= item.item_genre_id %></td>
+		      		<td><%= item.sale_status %></td>
+		      	</tr>
+		      	<% end %>
+		      </tbody>
+			</table>
+		</div>
+	  </div>
+	  <div class="col-1"></div>
+  </div>
+
+</div>

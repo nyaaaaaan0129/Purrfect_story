@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="row">
+	<div class="admin_item_new_header">
+		<h3>ジャンル一覧・追加</h3>
+	</div>
+  </div>
+  <div class="row">
+  	<div class="col-6">
+  		<div class="admin_item_genre_new_form">
+	  		<%= form_for(@item_genre, url: admin_item_genres_path, html: {method: 'POST'}) do |form| %>
+	  		<div class="field radio_buttons">
+	          <%= form.label :商品ジャンル %>
+	          <%= form.text_field :name %>
+	        </div>
+	        <div class="field radio_buttons">
+	          <%= form.radio_button :valid_invalid_status, "有効" ,checked: "checked" %>　有効
+	        </div>
+	        <div class="field radio_buttons">
+	          <%= form.radio_button :valid_invalid_status, "無効" %>　無効
+	        </div>
+	        <div class="actions radio_buttons">
+	          <%= form.submit "新規作成" %>
+	        </div>
+
+	        <% end %>
+        </div>
+  	</div>
+	  <div class="col-6">
+	  	<div class="admin_post__genre_new_form">
+	  	<%= form_for(@post_genre, url: admin_post_genres_path, html: {method: 'POST'}) do |form| %>
+	  		  <div class="field radio_buttons">
+	          <%= form.label :投稿ジャンル %>
+	          <%= form.text_field :name %>
+	        </div>
+	        <div class="field radio_buttons">
+	          <%= form.radio_button :valid_invalid_status, "有効" ,checked: "checked" %>　有効
+	        </div>
+	        <div class="field radio_buttons">
+	          <%= form.radio_button :valid_invalid_status, "無効" %>　無効
+	        </div>
+	        <div class="actions radio_buttons">
+	          <%= form.submit "新規作成" %>
+	        </div>
+
+	    <% end %>
+
+	  </div>
+	</div>
+</div>
+	<div class="row">
+  	<div class="col-6">
+	      <div class="admin_item_genre_index">
+	      	<table class="table table-bordered">
+					  <thead>
+					  	<tr>
+					  	  <th>ジャンル</th>
+					  	  <th>ステータス</th>
+					  	  <th></th>
+					  	</tr>
+				      </thead>
+				      <tbody>
+				      	<% @item_genres.each do |item_genre| %>
+				      	<tr>
+				      		<td><%= item_genre.name %></td>
+				      		<td><%= item_genre.valid_invalid_status %></td>
+		              <td>
+		                <%= link_to "編集する", edit_admin_item_genre_path(item_genre), class:"btn btn-info" %>
+		              </td>
+				      	</tr>
+				      	<% end %>
+				      </tbody>
+			      </table>
+	      </div>
+	  </div>
+	  <div class="col-6">
+	  	<div class="admin_post_genre_index">
+	  		<table class="table table-bordered">
+				  <thead>
+				  	<tr>
+				  	  <th>ジャンル</th>
+				  	  <th>ステータス</th>
+				  	  <th></th>
+				  	</tr>
+			    </thead>
+		      <tbody>
+		      	<% @post_genres.each do |post_genre| %>
+		      	<tr>
+		      		<td><%= post_genre.name %></td>
+		      		<td><%= post_genre.valid_invalid_status %></td>
+              <td>
+                <%= link_to "編集する", edit_admin_post_genre_path(post_genre), class:"btn btn-info" %>
+              </td>
+		      	</tr>
+		      	<% end %>
+		      </tbody>
+			  </table>
+	  	</div>
+	  </div>
+  </div>
+</div>

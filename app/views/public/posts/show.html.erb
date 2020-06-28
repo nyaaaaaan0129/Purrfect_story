@@ -1,0 +1,72 @@
+    <div class="container-fluid">
+      <div class="row">
+        <div class="main-visual">
+      </div>
+    </div>
+  <div class="row">
+  	<div class="col-3">
+  	  <div class="sidebar">
+        <%= render "public/shared/sidebar" %>
+  	  </div>
+  	</div>
+    <div class="col-9">
+      <h3>投稿詳細</h3>
+      <div class="post_show_title">
+        <%= @post.title %>
+      </div>
+      <div class="post_show_content">
+      	<%= @post.content.html_safe %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-9">
+      <%= link_to "この投稿を削除する", public_post_path(@post), method: :delete %>
+    </div>
+  </div>
+
+  <div class=" row">
+    <div class="col-3"></div>
+    <div class="col-9">
+      <% if @post.favorited_by?(current_member) %>
+        <%= link_to public_post_favorites_path(@post), method: :delete do %>
+          <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+          <%= @post.favorites.count %> いいね
+        <% end %>
+      <% else %>
+        <%= link_to public_post_favorites_path(@post), method: :post do %>
+          <i class="fa fa-heart" aria-hidden="true"></i>
+          <%= @post.favorites.count %> いいね
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class=" row">
+    <div class="col-3"></div>
+    <div class="col-9">
+      <% @post_comments.each do |post_comment| %>
+        <%= post_comment.member.nickname %>
+        <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+        <%= post_comment.comment %>
+        <% if post_comment.member == current_member %>
+        <%= link_to "削除", public_post_post_comment_path(post_comment), method: :delete %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class=" row">
+    <div class="col-3"></div>
+    <div class="col-9">
+      <%= form_for([@post, @post_comment], url:public_post_post_comments_path(@post), html: {method: 'POST'}) do |form| %>
+        <div class="field">
+          <%= form.label :コメント %>
+          <%= form.text_field :comment %>
+        </div>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
