@@ -45,7 +45,7 @@ a:hover {
 .main-visual {
     width: 100%;
     height: 600px;
-	background-image : url(image4.jpg);
+	background-image : image-url(image4.jpg);
 	background-size: cover;
 	margin-bottom: 100px;
 }
@@ -198,7 +198,7 @@ img {
 .thanks-image {
     width:450px;
     height:550px;
-	background-image: url(image1.jpg);
+	background-image: image-url(image1.jpg);
 	background-size:cover;
 	margin: 50px auto;
 }
@@ -206,7 +206,7 @@ img {
 .thanks-message {
 	width: 400px;
 	height:330px;
-	background-image: url(fukidashi.png);
+	background-image: image-url(fukidashi.png);
 	background-size:cover;
 }
 
