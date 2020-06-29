@@ -22,12 +22,14 @@ Member.create!(
       first_name: '秀人',
       last_name_kana: 'タカライ',
       first_name_kana: 'ヒデト',
-      nickname: '東京猫保護センター',
+      nickname: '港区猫保護センター',
       postal_code: '1111111',
       address: '東京都港区麻布４丁目',
       phone_number: '09012345678',
       password: '123456',
-      password_confirmation: '123456'
+      introduction: "東京都港区にある猫の保護施設です。webサイトはこちら（https:.......）",
+      password_confirmation: '123456',
+      image: open("./db/images/neko_cafe.png")
     },
     {
       email: 'bbb@gmail.com',
@@ -35,12 +37,14 @@ Member.create!(
       first_name: '花穂',
       last_name_kana: 'ムラタ',
       first_name_kana: 'ハナホ',
-      nickname: '徳島猫保護センター',
+      nickname: '文京区猫保護センター',
       postal_code: '2222222',
       address: '東京都文京区本郷４丁目',
       phone_number: '09012345678',
       password: '123456',
-      password_confirmation: '123456'
+      introduction: "東京都文京区にある猫の保護施設です。webサイトはこちら（https:.......）",
+      password_confirmation: '123456',
+      image: open("./db/images/pet_cat_omoi_sleep_woman.png")
     },
     {
       email: 'ccc@gmail.com',
@@ -53,7 +57,9 @@ Member.create!(
       address: '東京都渋谷区代々木２丁目',
       phone_number: '09012345678',
       password: '123456',
-      password_confirmation: '123456'
+      introduction: "2018年から猫の保護活動をしています。今は６歳の茶とらの男の子と暮らしています。",
+      password_confirmation: '123456',
+      image: open("./db/images/pet_cat_nekosui.png")
     },
     {
       email: 'ddd@gmail.com',
@@ -66,7 +72,9 @@ Member.create!(
       address: '東京都世田谷区成城6丁目',
       phone_number: '09012345678',
       password: '123456',
-      password_confirmation: '123456'
+      introduction: '2019年に東京猫保護センターからハチワレの女の子を引き取って一緒に暮らしています。',
+      password_confirmation: '123456',
+      image: open("./db/images/pet_niteru_cat.png")
     },
     {
       email: 'eee@gmail.com',
@@ -79,7 +87,9 @@ Member.create!(
       address: '東京都新宿区歌舞伎町３丁目',
       phone_number: '09012345678',
       password: '123456',
-      password_confirmation: '123456'
+      introduction: '実家にいた頃はずっと猫と暮らしていましたが一人暮らしになってからは猫と暮らせていません。少しでも猫助けをしたいと思って登録しました。',
+      password_confirmation: '123456',
+      image: open("./db/images/camera_cat.png")
     }
   ]
 )
