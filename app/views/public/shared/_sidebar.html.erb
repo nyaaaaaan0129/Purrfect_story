@@ -2,25 +2,26 @@
 	<table class="table table-borderless">
 	  <thead>
 	    <tr>
-	      <th class="sidebar_head">お買い物はこちら</th>
+	      <th colspan="2" class="sidebar_head">お買い物はこちら</th>
 	    </tr>
 	  </thead>
 	  <tbody>
+	  	<% Item.order("RANDOM()").limit(3).each do |random| %>
 	  	<tr>
+	  		  <div class="random_item_content">
+	  		    <td>
+	  			  <%= attachment_image_tag random, :image, size: "50x40", fallback: "no_image_item.png" %>
+	  		    </td>
 				<td>
-				  <div class="randome_item">ランダムアイテム</div>
+				  <%= link_to public_item_path(random) do %>
+				  <div class="randome_item">
+			  	<%= random.item_name %>
+			    </div>
+			    <% end %>
 				</td>
+              </div>
 	    </tr>
-	    <tr>
-		    <td>
-		      <div class="randome_item">ランダムアイテム</div>
-		    </td>
-	    </tr>
-	    <tr>
-		    <td>
-		      <div class="randome_item">ランダムアイテム</div>
-		    </td>
-	    </tr>
+	    <% end %>
 	  </tbody>
 	</table>
 </div>

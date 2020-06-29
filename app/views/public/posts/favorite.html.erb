@@ -7,48 +7,23 @@
   	<div class="col-3">
   	  <div class="sidebar">
         <%= render "public/shared/sidebar" %>
-        <% @favorites.each do |favorite| %>
-          <% post = Post.find_by(id: favorite.post_id) %>
-          <%= post.title %>
-        <% end %>
   	  </div>
   	</div>
     <div class="col-9">
       <h3 class="all_posts_header">いいねした投稿一覧</h3>
-      <div class="first_post">
-            <div class="first_post_image"></div>
-            <div class="first_post_title"><h4>
-            </h4></div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-3"></div>
     <div class="col-9">
       <div class="all_posts">
           <div class="all_posts_box second">
-            <div class="all_post_image"></div>
-            <div class="all_post_title">
-              <h5>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</h5>
+            <% @favorites.each do |favorite| %>
+            <% post = Post.find_by(id: favorite.post_id) %>
+            <div class="all_post_image">
+              <%= attachment_image_tag post, :image, size: "370x300", fallback: "no_image_item.png" %>
             </div>
-          </div>
-          <div class="all_posts_box third">
-            <div class="all_post_image"></div>
             <div class="all_post_title">
-              <h5>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</h5>
+              <h5><%= post.title %></h5>
             </div>
-          </div>
-          <div class="all_posts_box fourth">
-            <div class="all_post_image"></div>
-            <div class="all_post_title">
-              <h5>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</h5>
-            </div>
-          </div>
-          <div class="all_posts_box fifth">
-            <div class="all_post_image"></div>
-            <div class="all_post_title">
-              <h5>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</h5>
-            </div>
+            <% end %>
           </div>
       </div>
     </div>

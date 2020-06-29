@@ -14,6 +14,8 @@ class Member < ApplicationRecord
 
   enum withdrawal_status: { 有効: 0, 無効: 1 }
 
+  attachment :image
+
   def active_for_authentication?
     super && (self.is_deleted == false)
   end

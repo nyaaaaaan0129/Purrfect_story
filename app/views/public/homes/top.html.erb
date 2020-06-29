@@ -14,12 +14,16 @@
       <h3 class="new_post_header">新着投稿</h3>
 	      <div class="new_posts">
 	      	<% @posts.each do |post| %>
+          <%= link_to public_post_path(post) do %>
 	      	<div class="new_post post1">
-	      		<div class="post_image"></div>
+	      		<div class="post_image">
+              <%= attachment_image_tag post, :image, size: "200x150", fallback: "no_image_item.png" %>   
+            </div>
 	      		<div class="post_title">
 	      			<%= post.title %>
 	      		</div>
 	      	</div>
+          <% end %>
             <% end %>
 	      </div>
   	</div>
