@@ -1,0 +1,25 @@
+<div class="sidebar_table">
+	<table class="table table-borderless">
+	  <thead>
+	    <tr>
+	      <th colspan="2" class="sidebar_head">新着アイテムはこちら</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% Item.order(id: :ASC).limit(3).each do |new_item| %>
+	  	<tr>
+	  		<td>
+	  			<%= attachment_image_tag new_item, :image, size: "50x40", fallback: "no_image_item.png" %>
+	  		</td>
+			<td>
+			   <%= link_to public_item_path(new_item) do %>
+			  <div class="randome_item">
+			  	<%= new_item.item_name %>
+			  </div>
+			  <% end %>
+			</td>
+	    </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+</div>
