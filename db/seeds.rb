@@ -115,6 +115,10 @@ ItemGenre.create!(
   {
     name: "ケア用品",
     valid_invalid_status: 0
+  },
+  {
+    name: "キャリー・ケージ",
+    valid_invalid_status: 0
   }
  ]
 )
@@ -125,10 +129,34 @@ Item.create!(
   {
     item_genre_id: 1,
     item_name: "美味しいご飯マグロ味",
-    explanation: "１番人気のマグロ味のご飯です。たまのご褒美に。",
+    explanation: "１番人気のマグロ味のご飯です。",
     unit_price_without_tax: 200,
     sale_status: 0,
     image: open("./db/images/pet_food_cat_can.png")
+  },
+  {
+    item_genre_id: 1,
+    item_name: "美味しいご飯かつお味",
+    explanation: "ウェットタイプのかつお味のご飯です。",
+    unit_price_without_tax: 200,
+    sale_status: 0,
+    image: open("./db/images/pet_food_cat_can.png")
+  },
+  {
+    item_genre_id: 1,
+    item_name: "猫用おさかなチップス",
+    explanation: "マグロやかつおなど色々なおさかなの味のおやつです。たまのご褒美に。",
+    unit_price_without_tax: 200,
+    sale_status: 0,
+    image: open("./db/images/pet_oyatsu_cat.png")
+  },
+  {
+    item_genre_id: 2,
+    item_name: "猫じゃらし（緑）",
+    explanation: "カシャカシャ音がする食いつき抜群の猫じゃらしです。",
+    unit_price_without_tax: 400,
+    sale_status: 0,
+    image: open("./db/images/pet_nekojarashi.png")
   },
   {
     item_genre_id: 2,
@@ -161,6 +189,22 @@ Item.create!(
     unit_price_without_tax: 1000,
     sale_status: 0,
     image: open("./db/images/cat_tsumetogi.png")
+  },
+  {
+    item_genre_id: 6,
+    item_name: "キャリー　ハードタイプ（ピンク）",
+    explanation: "プラスチック製の丈夫なハードタイプのキャリーです。人慣れしていない猫向きです。",
+    unit_price_without_tax: 4000,
+    sale_status: 0,
+    image: open("./db/images/pet_carry_cage_cat.png")
+  },
+  {
+    item_genre_id: 6,
+    item_name: "キャリー　ハードタイプ（イエロー）",
+    explanation: "プラスチック製の丈夫なハードタイプのキャリーです。人慣れしていない猫向きです。",
+    unit_price_without_tax: 4000,
+    sale_status: 0,
+    image: open("./db/images/pet_cage_hakobu_woman.png")
   }
   ]
 )
@@ -191,6 +235,35 @@ PostGenre.create!(
   {
     name: "その他",
     valid_invalid_status: 0
+  }
+ ]
+)
+
+Post.create!(
+ [
+  {
+    title: "チーズちゃん　里親募集中です",
+    image: open("./db/images/post_image14.png"),
+    post_genre_id: 2,
+    member_id: 1
+  },
+  {
+    title: "黒豹さん　幸せになりました",
+    image: open("./db/images/post_image11.jpg"),
+    post_genre_id: 1,
+    member_id: 1
+  },
+  {
+    title: "はなえちゃん　里親募集中です",
+    image: open("./db/images/post_image4.png"),
+    post_genre_id: 2,
+    member_id: 2
+  },
+  {
+    title: "ぷっちゃん　里親募集中です",
+    image: open("./db/images/post_image2.jpg"),
+    post_genre_id: 2,
+    member_id: 3
   }
  ]
 )
