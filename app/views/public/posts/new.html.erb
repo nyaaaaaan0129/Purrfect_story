@@ -28,7 +28,7 @@
 
         <div class="field">
           <%= form.label :content %>
-          <%= form.text_area :content, 'data-provider': :summernote %>
+          <%= form.text_area :content, 'data-provider': :summernote, id:"summernote" %>
         </div>
         <div class="actions">
           <%= form.submit %>
@@ -37,3 +37,18 @@
     </div>
   </div>
 </div>
+
+<script>
+    $('#summernote').summernote({
+   fontSizes:['8', '9', '10', '11', '12', '13','14', '18', '24', '36'],
+  toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']]
+  ]
+});
+</script>
