@@ -239,31 +239,3 @@ PostGenre.create!(
  ]
 )
 
-Post.create!(
- [
-  {
-    title: "チーズちゃん　里親募集中です",
-    image: open("./db/images/post_image14.png"),
-    post_genre_id: 2,
-    member_id: 1
-  },
-  {
-    title: "黒豹さん　幸せになりました",
-    image: open("./db/images/post_image11.jpg"),
-    post_genre_id: 1,
-    member_id: 1
-  },
-  {
-    title: "はなえちゃん　里親募集中です",
-    image: open("./db/images/post_image4.png"),
-    post_genre_id: 2,
-    member_id: 2
-  },
-  {
-    title: "ぷっちゃん　里親募集中です",
-    image: open("./db/images/post_image2.jpg"),
-    post_genre_id: 2,
-    member_id: 3
-  }
- ]
-)

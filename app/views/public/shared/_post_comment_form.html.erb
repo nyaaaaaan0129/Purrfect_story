@@ -1,0 +1,9 @@
+<%= form_for([@post, @post_comment], url:public_post_post_comments_path(@post), remote: true, html: {method: 'POST'}) do |form| %>
+        <div class="field">
+          <%= form.label :コメント %>
+          <%= form.text_field :comment %>
+        </div>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
