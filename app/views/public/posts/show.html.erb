@@ -31,44 +31,25 @@
   <div class=" row">
     <div class="col-3"></div>
     <div class="col-9">
-      <% if @post.favorited_by?(current_member) %>
-        <%= link_to public_post_favorites_path(@post), method: :delete do %>
-          <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
-          <%= @post.favorites.count %> いいね
-        <% end %>
-      <% else %>
-        <%= link_to public_post_favorites_path(@post), method: :post do %>
-          <i class="fa fa-heart" aria-hidden="true"></i>
-          <%= @post.favorites.count %> いいね
-        <% end %>
-      <% end %>
+      <div id="favorite_buttons_<%= @post.id %>">
+                  <%= render "public/shared/favorite_button", post:@post %>
+                </div>
     </div>
   </div>
   <div class=" row">
     <div class="col-3"></div>
     <div class="col-9">
-      <% @post_comments.each do |post_comment| %>
-        <%= post_comment.member.nickname %>
-        <%= post_comment.created_at.strftime('%Y/%m/%d') %>
-        <%= post_comment.comment %>
-        <% if post_comment.member == current_member %>
-        <%= link_to "削除", public_post_post_comment_path(post_comment), method: :delete %>
-        <% end %>
-      <% end %>
+      <div class="post_comments">
+        <%= render "public/shared/post_comment" %>
+      </div>
     </div>
   </div>
   <div class=" row">
     <div class="col-3"></div>
     <div class="col-9">
-      <%= form_for([@post, @post_comment], url:public_post_post_comments_path(@post), html: {method: 'POST'}) do |form| %>
-        <div class="field">
-          <%= form.label :コメント %>
-          <%= form.text_field :comment %>
-        </div>
-        <div class="actions">
-          <%= form.submit %>
-        </div>
-      <% end %>
+      <div class="comment_form">
+        <%= render "public/shared/post_comment_form" %>
+      </div>
     </div>
   </div>
 </div>
