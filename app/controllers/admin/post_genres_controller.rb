@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::PostGenresController < ApplicationController
-  
+  before_action :authenticate_admin!
   def create
   	@post_genre = PostGenre.new(post_genre_params)
   	@post_genre.save

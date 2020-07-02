@@ -3,19 +3,26 @@
         <div class="main-visual">
       </div>
     </div>
+    <div class="row">
+      <div class="col-3"></div>
+    	<div class="col-6">
+    		<h3>ショッピングカート</h3>
+    	</div>
+      <div class="col-3"></div>
+    </div>
 	<div class="row">
 		<div class="col-1"></div>
 		<div class="col-8">
-		<h3>ショッピングカート</h3>
 	  </div>
 	  <div class="col-2">
-	  	 <div class="destroy_all btn btn-danger">カートを空にする</div>
+	  	 <%=link_to "カートを空にする", public_cart_items_destroy_all_path, method: :delete, class:"destroy_all btn btn-danger" %>
 	  </div>
 	  <div class="col-1"></div>
 	</div>
   <div class="row">
   	<div class="col-1"></div>
   	<div class="col-10">
+      <div class="cart_item_table">
 	  	<table class="table">
 			  <thead class="thead-dark">
 			  	<tr>
@@ -40,10 +47,14 @@
 		      			<%= ((cart_item.item.unit_price_without_tax*1.1).floor*cart_item.number_of_items) %>
                         <% @total += ((cart_item.item.unit_price_without_tax*1.1).floor*cart_item.number_of_items) %>
                     </td>
+              <td>
+                <%= link_to "削除する", public_cart_item_path(cart_item), method: :delete, class:"btn btn-danger" %>
+              </td>
 		      	</tr>
 		      	<% end %>
 		      </tbody>
 			</table>
+    </div>
 	  </div>
 	  <div class="col-1"></div>
   </div>

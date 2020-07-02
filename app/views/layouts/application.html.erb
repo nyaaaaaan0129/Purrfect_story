@@ -11,9 +11,12 @@
 
   <body>
     <div id="wrapper">
-    <header>
+    <header class="fixed-top">
         <nav class="navbar navbar-expand-lg">
-            <%= link_to "PURRFECT STORY", root_path, class:"navbar-brand" %>
+            <%= link_to root_path, class:"navbar-brand" do %>
+            <div class="logo"></div>
+            <div class="logo_name"></div>
+            <% end %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -47,20 +50,20 @@
               </li>
               <% elsif admin_signed_in?%>
               <%= link_to "投稿一覧", admin_posts_path, class:"nav-link"%>
-              <%= link_to "商品一覧", admin_posts_path, class:"nav-link"%>
-              <%= link_to "会員一覧", admin_posts_path, class:"nav-link"%>
-              <%= link_to "注文履歴一覧", admin_posts_path, class:"nav-link"%>
-              <%= link_to "ジャンル一覧", admin_posts_path, class:"nav-link"%>
+              <%= link_to "商品一覧", admin_items_path, class:"nav-link"%>
+              <%= link_to "会員一覧", admin_members_path, class:"nav-link"%>
+              <%= link_to "注文履歴一覧", admin_orders_path, class:"nav-link"%>
+              <%= link_to "ジャンル一覧", admin_item_genres_path, class:"nav-link"%>
               <%= link_to "log_out", destroy_admin_session_path, method: :delete, class:"nav-link"%>
               <% else %>
               <li class="nav-item">
-                <%= link_to "アバウト", new_member_session_path,  class:"nav-link"%>
+                <%= link_to "アバウト", public_public_about_path,  class:"nav-link"%>
               </li>
               <li class="nav-item">
                 <%= link_to "投稿一覧", public_posts_path,  class:"nav-link"%>
               </li>
               <li class="nav-item">
-                <%= link_to "商品一覧", public_posts_path,  class:"nav-link"%>
+                <%= link_to "商品一覧", public_items_path,  class:"nav-link"%>
               </li>
               <li class="nav-item">
                 <%= link_to "ログイン", new_member_session_path,  class:"nav-link"%>
@@ -75,7 +78,7 @@
     <%= yield %>
   </div>
     <footer>
-      
+      <div class="footer_logo"></div>
     </footer>
   </body>
 </html>

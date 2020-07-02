@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Public::MembersController < ApplicationController
+  before_action :authenticate_member!
   def index; end
 
   def new; end

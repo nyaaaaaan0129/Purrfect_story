@@ -17,13 +17,44 @@
 @import "summernote-bs4";
 
 
+@font-face {
+	font-family: 'azuki';
+	src: font-url('/assets/azuki.ttf') format("truetype");
+	font-weight: normal;
+    font-style: normal;
+}
 
+body {
+	font-family: 'azuki';
+	background-color:#FFF8DC;
+}
+
+
+h3 {
+	color: #6cb4e4;
+  text-align: center;
+  padding: 0.25em;
+  border-top: solid 2px #6cb4e4;
+  border-bottom: solid 2px #6cb4e4;
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+
+a {
+	color:#333333;
+}
 
 /*application.html.erbここから*/
+
+.container {
+	padding-top: 100px;
+	padding-bottom: 200px;
+}
 
 #wrapper {
 	width: 100%;
 	overflow:hidden;
+	min-height:100vh;
 }
 
 .navbar {
@@ -47,14 +78,40 @@ a:hover {
     height: 500px;
     background-image:image-url("image4.jpg");
     background-size:cover;
+    margin-top: 90px;
 	margin-bottom: 100px;
 }
 
 footer {
 	width:100%;
-	height:100px;
-	margin-top: 100px;
+	height:110px;
 	background-color: pink;
+	margin-top:100px;
+}
+
+.footer_logo {
+    width:90px;
+    height:95px;
+	background-image:image-url("PURRFECT_STORY_LOGO2.png");
+	background-size:cover;
+	margin:0 auto;
+}
+
+.logo {
+	width:90px;
+	height:80px;
+	background-image:image-url("PURRFECT_STORY_LOGO2_without_name.png");
+	background-size:cover;
+	float:left;
+}
+
+.logo_name {
+	width:300px;
+	height:40px;
+	background-image:image-url("PURRFECT_STORY_LOGO2_only_name.png");
+	background-size:cover;
+	float:left;
+	margin-top:20px;
 }
 
 /*application.html.erbここまで*/
@@ -64,8 +121,17 @@ footer {
 
 .sidebar_table {
     width: 200px;
-	border: 1px solid;
+	border: 3px solid #FF4F50;
 	margin: 60px;
+	border-radius:5px;
+	background-color:white;
+}
+
+.sidebar_head {
+	text-decoration:underline;
+	text-decoration-color: #FF4F50;
+	text-align:center;
+
 }
 
 /*shared/_sidebar.html.erbここまで*/
@@ -100,6 +166,7 @@ footer {
 	border-radius: 5px;
 	width:820px;
 	margin-left:20px;
+	background-color:white;
 }
 
 .all_posts_box {
@@ -108,6 +175,7 @@ footer {
 	width:400px;
 	margin-top:20px;
 	margin-left:20px;
+	background-color:white;
 }
 
 .first_post_image {
@@ -193,12 +261,19 @@ img {
 	float:left;
 }
 
+.public_item_show_image {
+	background-color:white;
+	border:1px solid;
+	border-radius:5px;
+}
+
 /*items/show.html.erbここまで*/
 
 /*cart_items/index.html.erbここから*/
 
 .destroy_all {
 	margin-top:20px;
+	margin-bottom:20px;
 }
 
 .total_price_text {
@@ -217,6 +292,11 @@ img {
 
 .cart_next {
 	text-align:center;
+}
+
+.cart_item_table {
+	margin-bottom:50px;
+	backgrond-color:white;
 }
 
 /*cart_items/index.html.erbここまで*/
@@ -304,6 +384,7 @@ img {
 
 .item_each_image {
 	border: 2px solid;
+	background-color:white;
 }
 
 /*public/items/index.html.erbここまで*/
@@ -325,3 +406,91 @@ img {
 }
 
 /*public/orders/index.html.erbここまで*/
+
+
+/*members/sessions/new.html.erbここから*/
+
+
+.new_session_logo {
+    margin:150px auto 0px auto;
+    width:700px;
+    height:300px;
+}
+
+.new_session_logo_icon {
+	width:220px;
+	height:200px;
+	background-image:image-url("PURRFECT_STORY_LOGO2_without_name.png");
+	background-size:cover;
+	float:left;
+}
+
+.new_session_logo_name {
+	width:450px;
+	height:60px;
+	background-image:image-url("PURRFECT_STORY_LOGO2_only_name.png");
+	background-size:cover;
+	float:left;
+	margin-top:70px;
+}
+
+.log_in_header {
+	text-align:center;
+	padding-top:20px;
+}
+
+.log_in {
+	width:500px;
+	height:400px;
+	background-color: #EEEEEE;
+	text-align:center;
+	margin:0 auto;
+}
+
+.log_in_form {
+	padding-top:20px;
+}
+
+/*members/sessions/new.html.erbここまで*/
+
+/*admins/sessions/new.html.erbここから*/
+
+.admin_log_in {
+	width:500px;
+	height:400px;
+	background-color: #EEEEEE;
+	text-align:center;
+	margin:200px auto 0px auto;
+}
+
+/*admins/sessions/new.html.erbここまで*/
+
+/*public/members/show.html.erbここから*/
+
+.member_show_content {
+	text-align:center;
+}
+
+.rounded-circle {
+	background-color:white;
+}
+
+.member_show_text {
+    margin: 30px 0px 30px 170px;
+}
+
+.member_show_text_2 {
+    margin: 30px 0px 30px 370px;
+}
+
+.mypage_buttons {
+	margin-left:370px;
+}
+
+/*public/members/show.html.erbここまで*/
+
+/*public/members/edit.html.erbここから*/
+
+.public_member_edit_header {
+	margin-top:150px;
+}

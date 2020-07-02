@@ -1,11 +1,13 @@
     <div class="container-fluid">
       <div class="row">
-        <div class="main-visual">
+        <div class="main-visual"></div>
       </div>
       <div class="row">
-        <h3 class="all_items_header">商品一覧(全<%= @items.count %>件)</h3>
+        <div class="col-3"></div>
+        <div class="col-6">
+        <h3 class="all_items_header">商品一覧(全<%= @items.count %>件)</h3></div>
+        <div class="col-3"></div>
       </div>
-    </div>
   <div class="row">
   	<div class="col-3">
   	  <div class="sidebar">
@@ -35,4 +37,3 @@
       </div>
     </div>
   </div>
-</div>

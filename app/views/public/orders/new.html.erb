@@ -3,11 +3,18 @@
       <div class="main-visual">
       </div>
     </div>
+    <div class="row">
+    <div class="col-3"></div>
+  	<div class="col-6">
+  		<h3>注文情報入力</h3>
+  	</div>
+  	<div class="col-3"></div>
+  </div>
 	<div class="row">
 	  <div class="col-1"></div>
 	  <div class="col-10">
 	  	<div class="public_orders_new_header">
-	  	  <h3>注文情報入力</h3>
+	  	  
 	  	</div>
 	  	<div class="public_orders_new_form">
 	  		<%= form_with(model: @order, local: true, url:public_orders_confirm_path, method: :post) do |f| %>
@@ -32,3 +39,5 @@
             <% end %>
 	  	</div>
 	  </div>
+	</div>
+  </div>
