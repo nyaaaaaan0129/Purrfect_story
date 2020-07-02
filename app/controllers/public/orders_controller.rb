@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Public::OrdersController < ApplicationController
+   before_action :authenticate_member!
   def index
     @orders = Order.all
   end

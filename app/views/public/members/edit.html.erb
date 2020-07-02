@@ -1,11 +1,16 @@
 <div class="container">
   <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+        <div class="public_member_edit_header">
+            <h3>登録情報編集</h3>
+          </div>
+      </div>
+        <div class="col-3"></div>
+  <div class="row">
   	  <div class="col-1"></div>
   	  <div class="col-10">
 	    <div class="public_member_edit">
-	      <div class="public_member_edit_header">
-	      	<h3>登録情報編集</h3>
-	      </div>
 	      <div class="public_member_edit_form">
 	      	 <%= form_for(@member, url: public_member_path(@member), html: {method: 'PATCH'}) do |form| %>
 	      	 <table class="table-bordered">

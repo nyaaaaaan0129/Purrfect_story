@@ -1,1 +1,23 @@
-admin posts show
+    <div class="container-fluid">
+    <div class="row">
+      <h3>投稿詳細</h3>
+    </div>
+  <div class="row">
+  	<div class="col-1">
+  	</div>
+    <div class="col-10">
+      <div class="post_show_title">
+        <%= @post.title %>
+      </div>
+      <div class="post_show_content">
+      	<%= @post.content.html_safe %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-9">
+      <%= link_to "この投稿を削除する", admin_post_path(@post), method: :delete %>
+    </div>
+  </div>
+</div>

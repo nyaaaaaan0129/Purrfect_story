@@ -3,6 +3,13 @@
         <div class="main-visual">
       </div>
     </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+      <h3 class="all_posts_header">新規投稿</h3>
+    </div>
+    <div class="col-3"></div>
+    </div>
   <div class="row">
   	<div class="col-3">
   	  <div class="sidebar">
@@ -10,7 +17,6 @@
   	  </div>
   	</div>
     <div class="col-9">
-      <h3>新規投稿</h3>
       <%= form_for(@post, url: '/public/posts', html: {method: 'POST'}) do |form| %>
         <div class="field">
           <%= form.label :タイトル %>

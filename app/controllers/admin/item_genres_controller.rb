@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::ItemGenresController < ApplicationController
+   before_action :authenticate_admin!
   def index
   	@item_genres = ItemGenre.all
   	@post_genres = PostGenre.all

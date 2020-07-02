@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
+    delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
+    get '/public/about' => 'homes#about'
     get '/orders/thanks' => 'orders#thanks'
     get '/posts/favorite' => 'posts#favorite'
     get '/orders/confirm' => 'orders#confirm'

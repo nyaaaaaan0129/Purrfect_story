@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 class Admin::PostsController < ApplicationController
-  def index; end
+  before_action :authenticate_admin!
+  def index
+  	@posts = Post.all
+  end
 
-  def show; end
+  def show
+  	@post = Post.find(params[:id])
+  end
 end
