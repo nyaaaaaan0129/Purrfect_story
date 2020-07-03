@@ -494,3 +494,29 @@ img {
 .public_member_edit_header {
 	margin-top:150px;
 }
+
+/*public/members/edit.html.erbここまで*/
+
+/*public/posts/show.html.erbここから*/
+
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+#back img {
+  width: 50px;
+}
+
+.post_show {
+	border: 1px solid;
+	background-color:white;
+	padding: 20px;
+	width:685px;
+	border-radius:5px;
+}
+
+.post_delete_button {
+	width:100%;
+	border-top:1px solid grey;
+}

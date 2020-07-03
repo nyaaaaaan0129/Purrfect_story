@@ -20,9 +20,8 @@
   	</div>
     <div class="col-4">
       <div class="public_item_show">
-        <div class="public_item_show_image">
-          <%= attachment_image_tag @item, :image, size: "300x400", fallback: "no_image_item.png" %>
-        </div>
+          <%= attachment_image_tag @item, :image, size: "400x400", fallback: "no_image_item.png", class:"public_item_show_image" %>
+
     </div>
     </div>
   <div class="col-5">

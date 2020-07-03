@@ -37,7 +37,11 @@
     <div class="col-1"></div>
   </div>
   <div class="row">
-    <div class="col-3"></div>
+    <div class="col-3">
+      <div class="sidebar">
+        <%= render "public/shared/sidebar_favorites" %>
+      </div>
+    </div>
     <div class="col-8">
       <div class="all_posts">
         <% @posts.each do |post| %>
