@@ -15,6 +15,9 @@
   	  <div class="sidebar">
         <%= render "public/shared/sidebar" %>
   	  </div>
+      <div class="sidebar">
+        <%= render "public/shared/sidebar_favorites" %>
+      </div>
   	</div>
     <div class="col-9">
       <%= form_for(@post, url: '/public/posts', html: {method: 'POST'}) do |form| %>
