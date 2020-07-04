@@ -1,13 +1,15 @@
 <div class="container">
   <div class="row">
+              <div class="public_member_edit_header">
+            <h3>会員情報編集</h3>
+          </div>
+  </div>
+  <div class="row">
   	  <div class="col-1"></div>
   	  <div class="col-10">
 	    <div class="public_member_edit">
-	      <div class="public_member_edit_header">
-	      	<h3>会員情報編集</h3>
-	      </div>
 	      <div class="public_member_edit_form">
-	      	 <%= form_for(@member, url: public_member_path(@member), html: {method: 'PATCH'}) do |form| %>
+	      	 <%= form_for(@member, url: admin_member_path(@member), html: {method: 'PATCH'}) do |form| %>
 	      	 <table class="table-bordered">
     		<tr>
     		  <th>お名前（非公開）</th>
@@ -74,9 +76,12 @@
             <tr>
               <th>会員ステータス</th>
               <td>
-                <div class="field">
-                  <%= form.text_field :withdrawal_status %>
-                </div>
+                <div class="field radio_buttons">
+              <%= form.radio_button :withdrawal_status, "有効" ,checked: "checked" %>　有効
+            </div>
+            <div class="field radio_buttons">
+              <%= form.radio_button :withdrawal_status, "無効" %>　無効
+            </div>
                 </td>
             </tr>
     	  </table>

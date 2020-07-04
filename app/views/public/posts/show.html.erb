@@ -20,50 +20,52 @@
       </div>
   	</div>
     <div class="col-9">
-      <div class="post_show">
       <div class="post_show_title">
-        <%= @post.title %>
+        <h2 class="post_show_title"><%= @post.title %></h2>
       </div>
+      <div class="post_show">
       <div class="post_show_content">
       	<%= @post.content.html_safe %>
       </div>
-      <div class="post_delete_button">
-      <%= link_to "この投稿を削除する", public_post_path(@post), method: :delete, class:"btn btn-danger" %>
+      <div class="buttons">
+        <div class="favorite">
+          <div id="favorite_buttons_<%= @post.id %>">
+                      <%= render "public/shared/favorite_button", post:@post %>
+                    </div>
+        </div>
+        <div class="post_delete_button">
+          <% if @post.member == current_member %>
+          <%= link_to "この投稿を削除する", public_post_path(@post), method: :delete, class:"btn btn-danger" %>
+          <% end %>
+      </div>
     </div>
     </div>
-    </div>
-
-
-  <div class=" row">
-    <div class="col-3"></div>
-    <div class="col-9">
-      <div id="favorite_buttons_<%= @post.id %>">
-                  <%= render "public/shared/favorite_button", post:@post %>
-                </div>
     </div>
   </div>
+  
+  
   <div class=" row">
     <div class="col-3"></div>
     <div class="col-9">
+      <div class="comments">
       <div class="post_comments">
         <%= render "public/shared/post_comment" %>
       </div>
-    </div>
-  </div>
-  <div class=" row">
-    <div class="col-3"></div>
-    <div class="col-9">
       <div class="comment_form">
         <%= render "public/shared/post_comment_form" %>
       </div>
+    </div>
+  </div>
+</div>
+
+
       <span id="back">
       <%=link_to "#" do %>
-        <%= image_tag "arrow.png" %>
+        <%= image_tag "PURRFECT_STORY_TOP.png" %>
       <% end %>
     </span>
     </div>
   </div>
-</div>
 
 
     <script type="text/javascript" src="js/jquery.min.js"></script>

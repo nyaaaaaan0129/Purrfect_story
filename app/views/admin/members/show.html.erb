@@ -1,16 +1,18 @@
 <div class="container">
   <div class="row">
+      <h3>会員詳細</h3>
+  </div>
+  <div class="row">
   	<div class="col-2"></div>
     <div class="col-8">
-    	<h3>会員詳細</h3>
     	<table class="table-bordered">
     		<tr>
     		  <th>お名前（非公開）</th>
-    		  <td><%= @member.last_name %> <%= current_member.first_name %></td>
+    		  <td><%= @member.last_name %> <%= @member.first_name %></td>
     		</tr>
     		<tr>
     		  <th>お名前（非公開）</th>
-    		  <td><%= @member.last_name_kana %> <%= current_member.first_name_kana %></td>
+    		  <td><%= @member.last_name_kana %> <%= @member.first_name_kana %></td>
     		</tr>
     		<tr>
     		  <th>ニックネーム（公開されるお名前）</th>
@@ -39,6 +41,7 @@
                 </td>
             </tr>
     	</table>
+        <%= link_to "編集", edit_admin_member_path(@member), class:"btn btn-info" %>
     </div>
   </div>
 </div>

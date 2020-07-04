@@ -23,24 +23,26 @@
       <%= form_for(@post, url: '/public/posts', html: {method: 'POST'}) do |form| %>
         <div class="field">
           <%= form.label :タイトル %>
-          <%= form.text_field :title %>
+          <%= form.text_field :title, size:"70" %>
         </div>
-        <div class="field">
-          <%= form.label :インデックス画像 %>
-          <%= form.attachment_field :image, placeholder: "インデックス画像" %>
+        <div class="add_image">
+          <div class="index_image">
+            <%= image_tag "no_image.jpg", size:"200x200", id:"index_image" %>
+          </div>
+          <div class="post_image">
+            <%= form.attachment_field :image, placeholder: "インデックス画像" %>
+          </div>
         </div>
-
         <div class="field">
                 <%= form.label :投稿ジャンル %>
                 <%= form.collection_select :post_genre_id, PostGenre.all, :id, :name %>
         </div>
 
         <div class="field">
-          <%= form.label :content %>
-          <%= form.text_area :content, 'data-provider': :summernote, id:"summernote" %>
+          <%= form.text_area :content, 'data-provider': :summernote, id:"summernote", size:"78x30", placeholder: "投稿本文" %>
         </div>
-        <div class="actions">
-          <%= form.submit %>
+        <div class="post_actions">
+          <%= form.submit "投稿する", class:"btn btn-primary" %>
         </div>
       <% end %>
     </div>
@@ -48,16 +50,14 @@
 </div>
 
 <script>
-    $('#summernote').summernote({
-   fontSizes:['8', '9', '10', '11', '12', '13','14', '18', '24', '36'],
-  toolbar: [
-    // [groupName, [list of button]]
-    ['style', ['bold', 'italic', 'underline', 'clear']],
-    ['font', ['strikethrough', 'superscript', 'subscript']],
-    ['fontsize', ['fontsize']],
-    ['color', ['color']],
-    ['para', ['ul', 'ol', 'paragraph']],
-    ['height', ['height']]
-  ]
+    $(function(){
+    $('#post_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#index_image").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
 });
+});
+
 </script>

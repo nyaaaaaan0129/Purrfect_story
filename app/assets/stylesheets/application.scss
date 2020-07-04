@@ -340,9 +340,7 @@ img {
 
 /*admin/items/index.html.erbここから*/
 
-.admin_all_items {
-	margin-top:100px;
-}
+
 
 /*admin/items/index.html.erbここまで*/
 
@@ -491,9 +489,7 @@ img {
 
 /*public/members/edit.html.erbここから*/
 
-.public_member_edit_header {
-	margin-top:150px;
-}
+
 
 /*public/members/edit.html.erbここまで*/
 
@@ -505,7 +501,7 @@ img {
   bottom: 20px;
 }
 #back img {
-  width: 50px;
+  width: 70px;
 }
 
 .post_show {
@@ -516,7 +512,66 @@ img {
 	border-radius:5px;
 }
 
+.buttons {
+    border-top:3px solid grey;
+	height: 70px;
+}
+
 .post_delete_button {
-	width:100%;
-	border-top:1px solid grey;
+    float:right;
+    padding-top:10px;
+}
+
+.post_show_title {
+	margin:20px 0 20px 0;
+}
+
+.favorite {
+float:left;
+padding-top:10px;
+}
+
+.comments {
+	border: 1px solid;
+	background-color:white;
+	padding: 20px;
+	width:685px;
+	border-radius:5px;
+	margin-top:30px;
+}
+
+.comment_form {
+	border-top: 3px solid grey;
+	padding-top:10px;
+}
+
+.submit_button {
+	text-align:right;
+}
+
+.comment_delete_button {
+	text-align:right;
+	border-bottom:1px solid grey;
+}
+
+.comment_member {
+	margin-top:5px;
+}
+
+.index_image {
+	margin-top: 20px;
+	margin-left:200px;
+}
+
+.post_image {
+    margin-top:5px;
+	margin-left:235px;
+}
+
+.add_image {
+	margin-left:20px;
+}
+
+.post_actions {
+	margin-left: 555px;
 }
