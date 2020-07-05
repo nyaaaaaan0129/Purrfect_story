@@ -75,7 +75,7 @@ gem 'kaminari'
 gem 'pry-byebug', group: :development
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
-gem 'simple_form', '4.0.1'
+gem 'simple_form', '5.0.0'
 gem 'summernote-rails', '~> 0.8.10.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
