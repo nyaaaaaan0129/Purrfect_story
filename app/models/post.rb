@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   belongs_to :post_genre, optional: true
 
   def favorited_by?(member)
-  	   favorites.where(member_id: member.id).exists?
+    favorites.where(member_id: member.id).exists?
   end
 
   attachment :image

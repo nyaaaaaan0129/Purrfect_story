@@ -1,8 +1,7 @@
     <div class="container-fluid">
       <div class="row">
-        <div class="main-visual">
+        <%= render "public/shared/mainvisual" %>
       </div>
-    </div>
     <%= flash[:notice] %>
   <div class="row">
       <div class="col-3"></div>
@@ -17,13 +16,13 @@
         <%= render "public/shared/sidebar" %>
   	  </div>
   	</div>
-  	<div class="col-9">
+  	<div class="col-6">
 	      <div class="new_posts">
 	      	<% @posts.each do |post| %>
           <%= link_to public_post_path(post) do %>
-	      	<div class="new_post post1">
+	      	<div class="top_new_post">
 	      		<div class="post_image">
-              <%= attachment_image_tag post, :image, size: "200x150", fallback: "no_image_item.png" %>   
+              <%= attachment_image_tag post, :image, size: "331x270", fallback: "no_image_item.png" %>
             </div>
 	      		<div class="post_title">
 	      			<%= post.title %>

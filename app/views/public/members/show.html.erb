@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="main-visual"></div>
+    <%= render "public/shared/mainvisual" %>
 </div>
   <div class="row">
       <div class="col-3"></div>
@@ -22,7 +22,7 @@
           <%= attachment_image_tag @member, :image, class:"rounded-circle border",  size: "400x400", fallback: "no_image.jpg" %>
         </div>
         <div class="member_show_text">
-        	<table class="table-bordered">
+        	<table class="member_show_text_table table-bordered">
         		<tr>
         		  <th>お名前（非公開）</th>
         		  <td><%= @member.last_name %> <%= current_member.first_name %></td>
@@ -32,35 +32,42 @@
         		  <td><%= @member.last_name_kana %> <%= current_member.first_name_kana %></td>
         		</tr>
         		<tr>
-        		  <th>ニックネーム（公開されるお名前）</th>
+        		  <th>ニックネーム</th>
         		  <td><%= @member.nickname %></td>
         		</tr>
                 <tr>
                     <th>自己紹介</th>
                     <td><%= @member.introduction %></td>
                 </tr>
+            <tr>
+                    <th>webサイト</th>
+                    <td><a href="#" style="color:blue;"><%= @member.web_site %></a></td>
+                </tr>
         		<tr>
-        		  <th>Email</th>
+        		  <th>Email（非公開）</th>
         		  <td><%= @member.email %></td>
         		</tr>
         		<tr>
-        		  <th>電話番号</th>
+        		  <th>電話番号（非公開）</th>
         		  <td><%= @member.phone_number %></td>
         		</tr>
         		<tr>
-        		  <th>郵便番号</th>
+        		  <th>郵便番号（非公開）</th>
         		  <td><%= @member.postal_code %></td>
         		</tr>
         		<tr>
-        		  <th>住所</th>
+        		  <th>住所（非公開）</th>
         		  <td><%= @member.address %></td>
         		</tr>
         	</table>
       </div>
     </div>
-        <div class="mypage_buttons">
+        <div class="mypage_blue_buttons">
           <%= link_to "注文履歴一覧", public_orders_path, class:"btn btn-primary" %>
+          <%= link_to "投稿した記事一覧", public_posts_path, class:"btn btn-primary" %>
           <%= link_to "登録情報を編集する", edit_public_member_path, class:"btn btn-primary" %>
+        </div><br>
+        <div class="mypage_withdrawal_button">
           <% if member_signed_in? && @member.id == current_member.id %>
           <%= link_to "退会する", public_path(current_member), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" %>
           <% end %>
@@ -71,7 +78,7 @@
           <%= attachment_image_tag @member, :image, class:"rounded-circle border",  size: "400x400", fallback: "no_image.jpg" %>
         </div>
         <div class="member_show_text_2">
-          <table class="table-bordered">
+          <table class="member_show_text_table table-bordered">
               <tr>
                 <th>ニックネーム</th>
                 <td><%= @member.nickname %></td>
@@ -79,6 +86,10 @@
               <tr>
                 <th>自己紹介</th>
                 <td><%= @member.introduction %></td>
+              </tr>
+              <tr>
+                <th>webサイト</th>
+                <td><a href="#" style="color:blue;"><%= @member.web_site %></a></td>
               </tr>
           </table>
         </div>

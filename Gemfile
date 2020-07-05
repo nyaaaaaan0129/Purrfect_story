@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -43,8 +43,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capistrano'
   gem 'capistrano-rails'
-  gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
 end
 
 group :development do
@@ -75,9 +75,9 @@ gem 'kaminari'
 gem 'pry-byebug', group: :development
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'summernote-rails', '~> 0.8.10.0'
 gem 'simple_form', '4.0.1'
+gem 'summernote-rails', '~> 0.8.10.0'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'dotenv-rails'
 group :production do
