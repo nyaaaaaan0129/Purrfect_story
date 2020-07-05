@@ -27,9 +27,10 @@ Member.create!(
       address: '東京都港区麻布４丁目',
       phone_number: '09012345678',
       password: '123456',
-      introduction: "東京都港区にある猫の保護施設です。webサイトはこちら（https:.......）",
+      introduction: "東京都港区にある猫の保護施設です。",
       password_confirmation: '123456',
-      image: open("./db/images/neko_cafe.png")
+      image: open("./db/images/neko_cafe.png"),
+      web_site: 'https:aaaaaaaaaaaa'
     },
     {
       email: 'bbb@gmail.com',
@@ -42,9 +43,10 @@ Member.create!(
       address: '東京都文京区本郷４丁目',
       phone_number: '09012345678',
       password: '123456',
-      introduction: "東京都文京区にある猫の保護施設です。webサイトはこちら（https:.......）",
+      introduction: "東京都文京区にある猫の保護施設です。",
       password_confirmation: '123456',
-      image: open("./db/images/pet_cat_omoi_sleep_woman.png")
+      image: open("./db/images/pet_cat_omoi_sleep_woman.png"),
+      web_site: 'https:bbbbbbbbbbbb'
     },
     {
       email: 'ccc@gmail.com',
@@ -67,7 +69,7 @@ Member.create!(
       first_name: '博文',
       last_name_kana: 'イトウ',
       first_name_kana: 'ヒロブミ',
-      nickname: 'アニマルガーディアン',
+      nickname: '猫好きおじさん',
       postal_code: '4444444',
       address: '東京都世田谷区成城6丁目',
       phone_number: '09012345678',
