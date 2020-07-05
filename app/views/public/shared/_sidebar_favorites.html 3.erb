@@ -1,0 +1,27 @@
+<div class="sidebar_table">
+	<table class="table table-borderless table-hover">
+	  <thead>
+	    <tr>
+	      <th colspan="2" class="sidebar_head">いいねランキング</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id)).each do |ranking| %>
+	  	<tr>
+	  		  <div class="ranking_post_content">
+	  		    <td>
+	  			  <%= attachment_image_tag ranking, :image, size: "50x40", fallback: "no_image_item.png" %>
+	  		    </td>
+				<td >
+				  <%= link_to public_item_path(ranking) do %>
+				  <div class="ranking_post">
+			  	<%= ranking.title %>
+			    </div>
+			    <% end %>
+				</td>
+              </div>
+	    </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+</div>

@@ -275,11 +275,14 @@ img {
 	margin-bottom:20px;
 }
 
+
+
 .total_price_text {
 	width:100px;
 	height:50px;
 	border: 1px solid;
 	float:left;
+	background-color:white;
 }
 
 .total_price_price {
@@ -287,6 +290,7 @@ img {
 	height:50px;
 	border: 1px solid;
 	float:left;
+	background-color:white;
 }
 
 .cart_next {
@@ -581,9 +585,14 @@ padding-top:10px;
 }
 
 .post_actions {
-	margin-left: 555px;
+    margin-top:10px;
+	float:right;
 }
 
 .post_show_title {
 	border-bottom: 3px solid grey;
+}
+
+.post_genre_field {
+	margin:10px 0 10px 0;
 }

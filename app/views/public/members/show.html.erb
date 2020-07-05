@@ -64,7 +64,9 @@
     </div>
         <div class="mypage_blue_buttons">
           <%= link_to "注文履歴一覧", public_orders_path, class:"btn btn-primary" %>
-          <%= link_to "投稿した記事一覧", public_posts_path, class:"btn btn-primary" %>
+          <% if current_member.posts.count >= 1 %>
+            <%= link_to "投稿した記事一覧", public_posts_path, class:"btn btn-primary" %>
+          <% end %>
           <%= link_to "登録情報を編集する", edit_public_member_path, class:"btn btn-primary" %>
           </div><br>
         <div class="mypage_withdrawal_button">
