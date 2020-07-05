@@ -50,8 +50,7 @@
 </div>
 
 <script>
- $('#summernote').summernote({
-   fontSizes:['8', '9', '10', '11', '12', '13','14', '18', '24', '36'],
+  $('#summernote').summernote({
   toolbar: [
     // [groupName, [list of button]]
     ['style', ['bold', 'italic', 'underline', 'clear']],
@@ -63,14 +62,5 @@
   ]
 });
 
-    $(function(){
-    $('#post_image').on('change', function (e) {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        $("#index_image").attr('src', e.target.result);
-    }
-    reader.readAsDataURL(e.target.files[0]);
-});
-});
-
 </script>
+
