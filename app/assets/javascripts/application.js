@@ -18,7 +18,6 @@
 //= require summernote/summernote-bs4.min
 //= require summernote-init
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function () {
@@ -26,7 +25,7 @@ $(document).ready(function () {
       // スライドショーの変化 ("fade" or "slide")
       transition : 'slide',
       // 変化に係る時間(ミリ秒)
-      speed : 1000,
+      speed : 3000,
       // easingの種類
       easing : 'easeOutQuart',
       // ナビゲーションの形("block" or "bubble")
@@ -34,7 +33,7 @@ $(document).ready(function () {
       // 子要素の種類("div" or "img")
       childrenElementType : 'div',
       // ナビゲーション矢印の表示(trueで表示)
-      arrows : true,
+      arrows : false,
       // スライドショーの自動再生(falseで自動再生なし)
       autoPlay : true,
       // 自動再生時のスライド切替間隔(ミリ秒)
@@ -45,3 +44,4 @@ $(document).ready(function () {
       hidePrevious : false
   });
 });
+
