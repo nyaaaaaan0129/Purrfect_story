@@ -26,8 +26,7 @@ class Public::MembersController < ApplicationController
   end
 
   def destroy
-    @member = Member.find(params[:id])
-    @member.update(is_deleted: true, withdrawal_status: 1)
+    current_member.update(is_deleted: true, withdrawal_status: 1)
     reset_session
     flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
     redirect_to new_member_session_path

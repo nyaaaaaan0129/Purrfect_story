@@ -8,17 +8,24 @@ class Public::CartItemsController < ApplicationController
   end
 
   def create
-      if nil != current_member.cart_items.find_by(item_id: params[:cart_item][:item_id]) 
-         @cart_item_u = current_member.cart_items.find_by(item_id: params[:cart_item][:item_id]) 
-         @cart_item_u.number_of_items += params[:cart_item][:number_of_items].to_i 
-         @cart_item_u.update(number_of_items: @cart_item_u.number_of_items)
-         redirect_to public_cart_items_path
-      else
-         @cart_item = CartItem.new(cart_item_params)
-         @cart_item.member_id = current_member.id 
-         @cart_item.save 
-         redirect_to public_cart_items_path 
-      end
+    if current_member.cart_items.count >= 1 #カート内に商品があるか？
+    	if nil != current_member.cart_items.find_by(item_id: params[:cart_item][:item_id]) 
+           @cart_item_u = current_member.cart_items.find_by(item_id: params[:cart_item][:item_id]) 
+           @cart_item_u.number_of_items += params[:cart_item][:number_of_items].to_i 
+           @cart_item_u.update(number_of_items: @cart_item_u.number_of_items)
+           redirect_to public_cart_items_path
+        else
+           @cart_item = CartItem.new(cart_item_params)
+           @cart_item.member_id = current_member.id 
+           @cart_item.save 
+           redirect_to public_cart_items_path 
+        end
+    else
+      @cart_item = CartItem.new(cart_item_params)
+           @cart_item.member_id = current_member.id 
+           @cart_item.save 
+           redirect_to public_cart_items_path 
+    end
   end
 
   def destroy

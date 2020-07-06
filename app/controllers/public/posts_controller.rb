@@ -3,8 +3,7 @@ class Public::PostsController < ApplicationController
 
 
   def index
-    @path = Rails.application.routes.recognize_path(request.referer)
-    if @path[:controller] == "public/members" && @path[:action] == "show"
+    if params[:key] == "1"
        @post = current_member.posts.last
        @posts = current_member.posts.order(id: :desc).offset(1)
     else
