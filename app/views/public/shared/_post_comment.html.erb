@@ -1,4 +1,7 @@
 <h4>コメント一覧</h4>
+<% if @post.post_comments.count == 0 %>
+<p>まだこの投稿へのコメントはありません。コメントを投稿してみましょう！</p>
+<% end %>
 <% @post_comments.each do |post_comment| %>
         <div class="comment_member">
         <%= attachment_image_tag post_comment.member, :image, class:"rounded-circle border",  size: "40x40", fallback: "no_image.jpg" %>

@@ -71,7 +71,7 @@
           </div><br>
         <div class="mypage_withdrawal_button">
           <% if member_signed_in? && @member.id == current_member.id %>
-          <%= link_to "退会する", public_path(current_member), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" %>
+          <%= link_to "退会する", public_members_withdrawal_path, class: "btn btn-outline-danger" %>
           <% end %>
         </div>
   <% else %>
