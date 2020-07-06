@@ -1,3 +1,10 @@
+<div id="loader-bg">
+  <div id="loader">
+    <%= image_tag "PURRFECT_STORY_loading5.gif", style:"width: 800px; height:400px;" %>
+  </div>
+</div>
+
+<div id="wrap">
     <div class="container-fluid">
       <div class="row">
         <div class="main-visual">
@@ -21,7 +28,7 @@
         <%= link_to public_post_path(@post) do %>
           <div class="first_post_content">
                 <div class="first_post_image">
-                  <%= attachment_image_tag @post, :image, size: "780x500", fallback: "no_image.jpg" %>
+                  <%= attachment_image_tag @post, :image, size: "780x500", fallback: "no_image.jpg", class:"first_post_image_tag" %>
                 </div>
                 <div class="first_post_title"><h4>
                   <%= @post.title %>
@@ -48,7 +55,7 @@
         <%= link_to public_post_path(post) do %>
             <div class="all_posts_box second">
               <div class="all_post_image">
-                <%= attachment_image_tag post, :image, size: "370x300", fallback: "no_image.jpg" %>
+                <%= attachment_image_tag post, :image, size: "370x300", fallback: "no_image.jpg", class:"all_post_image_tag" %>
               </div>
               <div class="all_post_title">
                 <h5><%= post.title %></h5>
@@ -64,4 +71,6 @@
     </div>
     <div class="col-1"></div>
   </div>
+</div>
+
 </div>

@@ -22,7 +22,7 @@
           <%= link_to public_post_path(post) do %>
 	      	<div class="top_new_post">
 	      		<div class="post_image">
-              <%= attachment_image_tag post, :image, size: "331x270", fallback: "no_image_item.png" %>   
+              <%= attachment_image_tag post, :image, size: "331x270", fallback: "no_image_item.png", class:"post_image_tag" %>   
             </div>
 	      		<div class="post_title">
 	      			<%= post.title %>

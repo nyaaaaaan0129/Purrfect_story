@@ -24,6 +24,37 @@
     font-style: normal;
 }
 
+
+
+#loader-bg {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #FFFFFF;
+  z-index: 1;
+}
+#loader {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  text-align: center;
+  color: black;
+  z-index: 2;
+}
+
+
+.password_field {
+	font-family:'Helvetica';
+}
+
 body {
 	font-family: 'azuki';
 	background-color:#FFF8DC;
@@ -136,6 +167,84 @@ footer {
 /*application.html.erbここまで*/
 
 
+/*homes/about.html.erbここから*/
+
+.about_header {
+	margin-top:150px;
+	margin-left:490px;
+	border-bottom: 10px solid orange;
+}
+
+.boxes {
+    margin-top:100px;
+    margin-left:70px;
+}
+
+
+.box1_image {
+	width:390px;
+	height:390px;
+	background-image:image-url('post_image2.jpg');
+	background-size:cover;
+	float:left;
+}
+
+.box1_text {
+	width:390px;
+	height:390px;
+	background-color:white;
+	float:left;
+}
+
+.box1_text_gaiyou {
+    padding:20px;
+	font-size:14px;
+}
+
+.box2_text {
+	width:390px;
+	height:390px;
+	background-color:white;
+	float:left;
+}
+
+.box2_text_theme {
+	padding:20px;
+	font-size:14px;
+}
+
+.box2_image {
+	width:390px;
+	height:390px;
+	background-image:image-url('post_image6.png');
+	background-size:cover;
+	float:left;
+}
+
+.box3_text {
+	width:390px;
+	height:390px;
+	background-color:white;
+	float:left;
+}
+
+.box3_text_theme {
+	padding:20px;
+	font-size:14px;
+}
+
+.box3_image {
+	width:390px;
+	height:390px;
+	background-image:image-url('post_image1.jpg');
+	background-size:cover;
+	float:left;
+}
+
+
+/*homes/about.html.erbここまで*/
+
+
 /*shared/_sidebar.html.erbここから*/
 
 .sidebar_table {
@@ -197,9 +306,21 @@ footer {
 }
 
 .first_post_image {
-	margin:20px;
+    margin:20px;
+	overflow:hidden;
 }
 
+.first_post_image_tag {
+	-webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.first_post_image_tag:hover {
+	-webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
 
 
 .first_post_title{
@@ -218,8 +339,21 @@ img {
 
 .all_post_image {
 	margin:20px;
+	overflow:hidden;
 }
 
+
+.all_post_image_tag {
+	-webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.all_post_image_tag:hover {
+	-webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
 
 
 .all_post_title {
@@ -358,6 +492,24 @@ img {
 	background-color:#FFCCCC;
 }
 
+.post_image {
+	overflow:hidden;
+}
+
+.post_image_tag {
+		-webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+
+.post_image_tag:hover {
+	-webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+
 /*admin/admins/top.html.erbここまで*/
 
 /*admin/items/index.html.erbここから*/
@@ -462,7 +614,7 @@ img {
 .log_in {
 	width:500px;
 	height:400px;
-	background-color: #EEEEEE;
+	background-color: white;
 	text-align:center;
 	margin:0 auto;
 }

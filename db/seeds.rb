@@ -27,9 +27,9 @@ Member.create!(
       address: '東京都港区麻布４丁目',
       phone_number: '09012345678',
       password: '123456',
-      introduction: "東京都港区にある猫の保護施設です。",
+      introduction: '東京都港区にある猫の保護施設です。',
       password_confirmation: '123456',
-      image: open("./db/images/neko_cafe.png"),
+      image: open('./db/images/neko_cafe.png'),
       web_site: 'https:aaaaaaaaaaaa'
     },
     {
@@ -43,9 +43,9 @@ Member.create!(
       address: '東京都文京区本郷４丁目',
       phone_number: '09012345678',
       password: '123456',
-      introduction: "東京都文京区にある猫の保護施設です。",
+      introduction: '東京都文京区にある猫の保護施設です。',
       password_confirmation: '123456',
-      image: open("./db/images/pet_cat_omoi_sleep_woman.png"),
+      image: open('./db/images/pet_cat_omoi_sleep_woman.png'),
       web_site: 'https:bbbbbbbbbbbb'
     },
     {
@@ -59,9 +59,9 @@ Member.create!(
       address: '東京都渋谷区代々木２丁目',
       phone_number: '09012345678',
       password: '123456',
-      introduction: "2018年から猫の保護活動をしています。今は６歳の茶とらの男の子と暮らしています。",
+      introduction: '2018年から猫の保護活動をしています。今は６歳の茶とらの男の子と暮らしています。',
       password_confirmation: '123456',
-      image: open("./db/images/pet_cat_nekosui.png")
+      image: open('./db/images/pet_cat_nekosui.png')
     },
     {
       email: 'ddd@gmail.com',
@@ -76,7 +76,7 @@ Member.create!(
       password: '123456',
       introduction: '2019年に東京猫保護センターからハチワレの女の子を引き取って一緒に暮らしています。',
       password_confirmation: '123456',
-      image: open("./db/images/pet_niteru_cat.png")
+      image: open('./db/images/pet_niteru_cat.png')
     },
     {
       email: 'eee@gmail.com',
@@ -91,153 +91,197 @@ Member.create!(
       password: '123456',
       introduction: '実家にいた頃はずっと猫と暮らしていましたが一人暮らしになってからは猫と暮らせていません。少しでも猫助けをしたいと思って登録しました。',
       password_confirmation: '123456',
-      image: open("./db/images/camera_cat.png")
+      image: open('./db/images/camera_cat.png')
     }
   ]
 )
 
 ItemGenre.create!(
- [
-  {
-    name: "ごはん",
-    valid_invalid_status: 0
-  },
-  {
-    name: "おもちゃ",
-    valid_invalid_status: 0
-  },
-  {
-    name: "ベッド",
-    valid_invalid_status: 0
-  },
-  {
-    name: "トイレ用品",
-    valid_invalid_status: 0
-  },
-  {
-    name: "ケア用品",
-    valid_invalid_status: 0
-  },
-  {
-    name: "キャリー・ケージ",
-    valid_invalid_status: 0
-  }
- ]
-)
-
-
-Item.create!(
- [
-  {
-    item_genre_id: 1,
-    item_name: "美味しいご飯マグロ味",
-    explanation: "１番人気のマグロ味のご飯です。",
-    unit_price_without_tax: 200,
-    sale_status: 0,
-    image: open("./db/images/pet_food_cat_can.png")
-  },
-  {
-    item_genre_id: 1,
-    item_name: "美味しいご飯かつお味",
-    explanation: "ウェットタイプのかつお味のご飯です。",
-    unit_price_without_tax: 200,
-    sale_status: 0,
-    image: open("./db/images/pet_food_cat_can.png")
-  },
-  {
-    item_genre_id: 1,
-    item_name: "猫用おさかなチップス",
-    explanation: "マグロやかつおなど色々なおさかなの味のおやつです。たまのご褒美に。",
-    unit_price_without_tax: 200,
-    sale_status: 0,
-    image: open("./db/images/pet_oyatsu_cat.png")
-  },
-  {
-    item_genre_id: 2,
-    item_name: "猫じゃらし（緑）",
-    explanation: "カシャカシャ音がする食いつき抜群の猫じゃらしです。",
-    unit_price_without_tax: 400,
-    sale_status: 0,
-    image: open("./db/images/pet_nekojarashi.png")
-  },
-  {
-    item_genre_id: 2,
-    item_name: "猫じゃらし（緑）",
-    explanation: "カシャカシャ音がする食いつき抜群の猫じゃらしです。",
-    unit_price_without_tax: 400,
-    sale_status: 0,
-    image: open("./db/images/pet_nekojarashi.png")
-  },
-  {
-    item_genre_id: 3,
-    item_name: "猫ちぐら",
-    explanation: "夏は涼しく冬は暖かい、取り合いになること間違いなしの猫ちぐらです。",
-    unit_price_without_tax: 3000,
-    sale_status: 0,
-    image: open("./db/images/pet_nekotsugura.png")
-  },
-  {
-    item_genre_id: 4,
-    item_name: "匂わない優秀猫砂",
-    explanation: "うんちやおしっこの匂いを素早く吸収してくれる猫のトイレ砂です。",
-    unit_price_without_tax: 1000,
-    sale_status: 0,
-    image: open("./db/images/pet_nekosuna.png")
-  },
-  {
-    item_genre_id: 5,
-    item_name: "壁に貼れる爪とぎ",
-    explanation: "壁に貼れるタイプの爪とぎです。よく猫ちゃんが爪とぎしてしまう壁部分に貼りましょう。",
-    unit_price_without_tax: 1000,
-    sale_status: 0,
-    image: open("./db/images/cat_tsumetogi.png")
-  },
-  {
-    item_genre_id: 6,
-    item_name: "キャリー　ハードタイプ（ピンク）",
-    explanation: "プラスチック製の丈夫なハードタイプのキャリーです。人慣れしていない猫向きです。",
-    unit_price_without_tax: 4000,
-    sale_status: 0,
-    image: open("./db/images/pet_carry_cage_cat.png")
-  },
-  {
-    item_genre_id: 6,
-    item_name: "キャリー　ハードタイプ（イエロー）",
-    explanation: "プラスチック製の丈夫なハードタイプのキャリーです。人慣れしていない猫向きです。",
-    unit_price_without_tax: 4000,
-    sale_status: 0,
-    image: open("./db/images/pet_cage_hakobu_woman.png")
-  }
+  [
+    {
+      name: 'ごはん',
+      valid_invalid_status: 0
+    },
+    {
+      name: 'おもちゃ',
+      valid_invalid_status: 0
+    },
+    {
+      name: 'ベッド',
+      valid_invalid_status: 0
+    },
+    {
+      name: 'トイレ用品',
+      valid_invalid_status: 0
+    },
+    {
+      name: 'ケア用品',
+      valid_invalid_status: 0
+    },
+    {
+      name: 'キャリー・ケージ',
+      valid_invalid_status: 0
+    }
   ]
 )
 
-
-PostGenre.create!(
- [
-  {
-    name: "幸せになった話",
-    valid_invalid_status: 0
-  },
-  {
-    name: "里親募集中",
-    valid_invalid_status: 0
-  },
-  {
-    name: "驚いた話",
-    valid_invalid_status: 0
-  },
-  {
-    name: "役に立つ話",
-    valid_invalid_status: 0
-  },
-  {
-    name: "可愛いうちの子みてください！",
-    valid_invalid_status: 0
-  },
-  {
-    name: "その他",
-    valid_invalid_status: 0
-  }
- ]
+Item.create!(
+  [
+    {
+      item_genre_id: 1,
+      item_name: '美味しいご飯マグロ味',
+      explanation: '１番人気のマグロ味のご飯です。',
+      unit_price_without_tax: 200,
+      sale_status: 0,
+      image: open('./db/images/pet_food_cat_can.png')
+    },
+    {
+      item_genre_id: 1,
+      item_name: '美味しいご飯かつお味',
+      explanation: 'ウェットタイプのかつお味のご飯です。',
+      unit_price_without_tax: 200,
+      sale_status: 0,
+      image: open('./db/images/pet_food_cat_can.png')
+    },
+    {
+      item_genre_id: 1,
+      item_name: '猫用おさかなチップス',
+      explanation: 'マグロやかつおなど色々なおさかなの味のおやつです。たまのご褒美に。',
+      unit_price_without_tax: 200,
+      sale_status: 0,
+      image: open('./db/images/pet_oyatsu_cat.png')
+    },
+    {
+      item_genre_id: 2,
+      item_name: '猫じゃらし（緑）',
+      explanation: 'カシャカシャ音がする食いつき抜群の猫じゃらしです。',
+      unit_price_without_tax: 400,
+      sale_status: 0,
+      image: open('./db/images/pet_nekojarashi.png')
+    },
+    {
+      item_genre_id: 2,
+      item_name: '猫じゃらし（緑）',
+      explanation: 'カシャカシャ音がする食いつき抜群の猫じゃらしです。',
+      unit_price_without_tax: 400,
+      sale_status: 0,
+      image: open('./db/images/pet_nekojarashi.png')
+    },
+    {
+      item_genre_id: 3,
+      item_name: '猫ちぐら',
+      explanation: '夏は涼しく冬は暖かい、取り合いになること間違いなしの猫ちぐらです。',
+      unit_price_without_tax: 3000,
+      sale_status: 0,
+      image: open('./db/images/pet_nekotsugura.png')
+    },
+    {
+      item_genre_id: 4,
+      item_name: '匂わない優秀猫砂',
+      explanation: 'うんちやおしっこの匂いを素早く吸収してくれる猫のトイレ砂です。',
+      unit_price_without_tax: 1000,
+      sale_status: 0,
+      image: open('./db/images/pet_nekosuna.png')
+    },
+    {
+      item_genre_id: 5,
+      item_name: '壁に貼れる爪とぎ',
+      explanation: '壁に貼れるタイプの爪とぎです。よく猫ちゃんが爪とぎしてしまう壁部分に貼りましょう。',
+      unit_price_without_tax: 1000,
+      sale_status: 0,
+      image: open('./db/images/cat_tsumetogi.png')
+    },
+    {
+      item_genre_id: 6,
+      item_name: 'キャリー　ハードタイプ（ピンク）',
+      explanation: 'プラスチック製の丈夫なハードタイプのキャリーです。人慣れしていない猫向きです。',
+      unit_price_without_tax: 4000,
+      sale_status: 0,
+      image: open('./db/images/pet_carry_cage_cat.png')
+    },
+    {
+      item_genre_id: 6,
+      item_name: 'キャリー　ハードタイプ（イエロー）',
+      explanation: 'プラスチック製の丈夫なハードタイプのキャリーです。人慣れしていない猫向きです。',
+      unit_price_without_tax: 4000,
+      sale_status: 0,
+      image: open('./db/images/pet_cage_hakobu_woman.png')
+    }
+  ]
 )
 
+PostGenre.create!(
+  [
+    {
+      name: '幸せになった話',
+      valid_invalid_status: 0
+    },
+    {
+      name: '里親募集中',
+      valid_invalid_status: 0
+    },
+    {
+      name: '驚いた話',
+      valid_invalid_status: 0
+    },
+    {
+      name: '役に立つ話',
+      valid_invalid_status: 0
+    },
+    {
+      name: '可愛いうちの子みてください！',
+      valid_invalid_status: 0
+    },
+    {
+      name: 'その他',
+      valid_invalid_status: 0
+    }
+  ]
+)
+
+Post.create!(
+  [
+    {
+      title: '可愛い白黒ハチワレ兄弟　里親募集',
+      member_id: '1',
+      post_genre_id: '2',
+      image: open('./db/images/image1.jpg'),
+      content: '<p>テスト投稿</p>'
+    },
+    {
+      title: '可愛いぷっちゃん',
+      member_id: '2',
+      post_genre_id: '1',
+      image: open('./db/images/post_image2.jpg'),
+      content: '<p>テスト投稿</p>'
+    },
+    {
+      title: '可愛いはなえちゃん',
+      member_id: '3',
+      post_genre_id: '1',
+      image: open('./db/images/post_image4.png'),
+      content: '<p>テスト投稿</p>'
+    },
+    {
+      title: '可愛いチーズちゃん　里親募集',
+      member_id: '1',
+      post_genre_id: '2',
+      image: open('./db/images/post_image1.jpg'),
+      content: '<p>テスト投稿</p>'
+    },
+    {
+      title: '格好いい黒豹さん',
+      member_id: '5',
+      post_genre_id: '1',
+      image: open('./db/images/post_image10.jpg'),
+      content: '<p>テスト投稿</p>'
+    },
+    {
+      title: '可愛いパンダちゃん',
+      member_id: '4',
+      post_genre_id: '1',
+      image: open('./db/images/image3.jpg'),
+      content: '<p>テスト投稿</p>'
+    }
+  ]
+)

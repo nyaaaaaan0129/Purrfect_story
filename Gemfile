@@ -43,8 +43,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capistrano'
   gem 'capistrano-rails'
-  gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
 end
 
 group :development do
@@ -75,9 +75,9 @@ gem 'kaminari'
 gem 'pry-byebug', group: :development
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
+gem 'simple_form'
+gem 'summernote-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'summernote-rails', '~> 0.8.10.0'
-gem 'simple_form', '4.0.1'
 
 gem 'dotenv-rails'
 group :production do

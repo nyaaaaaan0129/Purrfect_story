@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.14.1"
+lock '~> 3.14.1'
 
-set :application, "Purrfect_story"
-set :repo_url, "nyaaaaaan0129@gmail.com"
+set :application, 'Purrfect_story'
+set :repo_url, 'nyaaaaaan0129@gmail.com'
 
-set :deploy_to, "/home/ec2-user/Purrfect_story"
+set :deploy_to, '/home/ec2-user/Purrfect_story'
 set :rbenv_ruby, '2.5.7'
-set :linked_files, %w{config/master.key .env}
-append :linked_dirs, "log", "public/system", "tmp"
+set :linked_files, %w[config/master.key .env]
+append :linked_dirs, 'log', 'public/system', 'tmp'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
