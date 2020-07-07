@@ -80,3 +80,15 @@ function stopload(){
     reader.readAsDataURL(e.target.files[0]);
 });
 });
+
+
+$(function(){
+ 
+  // 画面読込時に実行する。
+  $("#comment_toggle").hide(); // 初期表示で隠しておく
+
+  // 指定ボタンを押下すると処理を開始する
+  $("#comment_hyouji").on("click", function() {
+    $("#comment_toggle").toggle(); // div領域を表示
+  });
+});
