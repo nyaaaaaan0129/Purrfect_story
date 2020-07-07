@@ -70,3 +70,13 @@ function stopload(){
   $('#loader-bg').delay(900).fadeOut(800);
   $('#loader').delay(600).fadeOut(300);
 }
+
+ $(function(){
+    $('#post_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#index_image").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+});

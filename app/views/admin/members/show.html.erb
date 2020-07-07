@@ -42,6 +42,8 @@
             </tr>
     	</table>
         <%= link_to "編集", edit_admin_member_path(@member), class:"btn btn-info" %>
+        <%= link_to "この会員の注文履歴一覧", admin_orders_path(@member.id), class:"btn btn-info" %>
+        <%= link_to "この会員の投稿履歴一覧", admin_posts_path(@member.id), class:"btn btn-info" %>
     </div>
   </div>
 </div>

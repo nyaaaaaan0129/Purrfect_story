@@ -428,6 +428,9 @@ img {
 	margin-bottom:20px;
 }
 
+.public_cart_item_table {
+	background-color:white;
+}
 
 
 .total_price_text {
@@ -512,6 +515,18 @@ img {
 
 /*admin/admins/top.html.erbここまで*/
 
+
+/*admin/posts/show.html.erbここから*/
+
+
+.admin_post_show_button {
+	float:right;
+}
+
+
+/*admin/posts/show.html.erbここまで*/
+
+
 /*admin/items/index.html.erbここから*/
 
 
@@ -575,6 +590,10 @@ img {
 
 .order_item {
 	width:400px;
+}
+
+.public_orders_table {
+	background-color:white;
 }
 
 /*public/orders/index.html.erbここまで*/

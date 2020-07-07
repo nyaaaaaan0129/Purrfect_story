@@ -46,22 +46,17 @@
     </div>
     </div>
   </div>
-  
-  
-  <div class=" row">
+  <div class="row">
     <div class="col-3"></div>
     <div class="col-9">
       <div class="comments">
-      <div class="post_comments">
-        <%= render "public/shared/post_comment" %>
 
-        <%= render "public/shared/post_comment_form" %>
+           <%= render "public/shared/post_comment" %>
+
+
+          <%= render "public/shared/post_comment_form" %>
+
       </div>
-    </div>
-  </div>
-</div>
-
-
       <span id="back">
       <%=link_to "#" do %>
         <%= image_tag "PURRFECT_STORY_TOP.png" %>
@@ -69,6 +64,8 @@
     </span>
     </div>
   </div>
+</div>
+
 
 <script>
   $(function() {

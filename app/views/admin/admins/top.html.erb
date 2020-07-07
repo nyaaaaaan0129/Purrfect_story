@@ -13,20 +13,20 @@
 	<div class="col-3">
 	  <div class="admin_top_text">
 		<div class="todays_orders">
-			<h4>本日の注文件数</h4>
+			<%= link_to admin_posts_path(key:1) do %><h4>本日の投稿件数</h4><% end %>
 		</div>
 		<div class="todays_posts">
-			<h4>本日の投稿件数</h4>
+			<%= link_to admin_orders_path(key:1) do %><h4>本日の注文件数</h4><% end %>
 		</div>
 	  </div>
 	</div>
 	<div class="col-3">
 	  <div class="admin_top_text">
 		<div class="todays_orders_number">
-			<h4>8件</h4>
+			<h4><%= @post.count %>件</h4>
 		</div>
 		<div class="todays_postsumber">
-			<h4>8件</h4>
+			<h4><%= @order.count %>件</h4>
 		</div>
 	  </div>
 	</div>

@@ -49,7 +49,8 @@
                 <%= link_to destroy_member_session_path, method: :delete, class:"nav-link" do %><i class="fas fa-sign-out-alt"></i>log out<% end %>
               </li>
               <% elsif admin_signed_in?%>
-              <%= link_to "投稿一覧", admin_posts_path, class:"nav-link"%>
+              <%= link_to "Admin TOP", admin_admins_path, class:"nav-link" %>
+              <%= link_to "投稿一覧", admin_posts_path(key:2), class:"nav-link"%>
               <%= link_to "商品一覧", admin_items_path, class:"nav-link"%>
               <%= link_to "会員一覧", admin_members_path, class:"nav-link"%>
               <%= link_to "注文履歴一覧", admin_orders_path, class:"nav-link"%>

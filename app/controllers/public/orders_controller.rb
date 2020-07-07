@@ -3,7 +3,12 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_member!
   def index
-    @orders = Order.all
+    @path = Rails.application.routes.recognize_path(request.referer)
+    if @path[:controller] == "public/members" && @path[:action] == "show"
+       @orders = Order.where(member_id: params[:format])
+    else
+      @orders = Order.all
+    end
   end
 
   def show
