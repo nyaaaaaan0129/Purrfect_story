@@ -296,6 +296,12 @@ footer {
 	background-color:white;
 }
 
+.first_post_user {
+  margin-left:20px;
+  margin-bottom:10px;
+}
+
+
 .all_posts_box {
 	border:1px solid grey;
 	border-radius: 5px;
@@ -460,6 +466,18 @@ img {
 
 /*cart_items/index.html.erbここまで*/
 
+
+
+/*orders/confirm.html.erbここから*/
+
+
+.public_orders_confirm_table {
+	background-color:white;
+}
+
+/*orders/confirm.html.erbここから*/
+
+
 /*orders/thanks.html.erbここから*/
 
 .thanks-image {
@@ -496,11 +514,21 @@ img {
 }
 
 .post_image {
+    margin:10px;
 	overflow:hidden;
 }
 
+.top_new_post {
+    border-radius:5px;
+	border:1px solid grey;
+}
+
+.post_title {
+	margin-left:10px;
+}
+
 .post_image_tag {
-		-webkit-transform: scale(1);
+	-webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
@@ -583,7 +611,11 @@ img {
 	margin-top:100px;
 }
 
-/*public/items/index.html.erbここまで*/
+.cart_create {
+	margin-top:20px;
+}
+
+/*public/items/show.html.erbここまで*/
 
 
 /*public/orders/index.html.erbここから*/
@@ -686,6 +718,10 @@ img {
 	background-color:white;
 	margin:0 auto;
 	}
+
+.member_posts {
+	margin-top:10px;
+}
 
 /*public/members/show.html.erbここまで*/
 

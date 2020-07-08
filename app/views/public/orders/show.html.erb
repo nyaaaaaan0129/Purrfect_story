@@ -21,7 +21,13 @@
   			</tr>
   			<tr>
   				<th>配送先</th>
-  				<td><%= @order.address %></td>
+  				<td>
+            <% if @order.address == current_member.address %>
+            <%= @order.address %>
+            <% else %>
+            <%= @order.nickname %>
+            <% end %>
+          </td>
   			</tr>
   			<tr>
   				<th>支払方法</th>

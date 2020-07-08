@@ -7,6 +7,9 @@ class Public::PostsController < ApplicationController
     if params[:key] == '1'
       @post = current_member.posts.last
       @posts = current_member.posts.order(id: :desc).offset(1)
+    elsif params[:key] == '2'
+      @post = Member.find(params[:format]).posts.last
+      @posts = Member.find(params[:format]).posts.order(id: :desc).offset(1)
     else
       @post = Post.last
       @posts = Post.order(id: :desc).offset(1)

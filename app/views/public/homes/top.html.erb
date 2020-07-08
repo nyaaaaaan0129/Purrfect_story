@@ -22,10 +22,10 @@
           <%= link_to public_post_path(post), data: {"turbolinks" => false} do %>
 	      	<div class="top_new_post">
 	      		<div class="post_image">
-              <%= attachment_image_tag post, :image, size: "331x270", fallback: "no_image_item.png", class:"post_image_tag" %>   
+              <%= attachment_image_tag post, :image, size: "311x270", fallback: "no_image_item.png", class:"post_image_tag" %>   
             </div>
 	      		<div class="post_title">
-	      			<%= post.title %>
+	      			<%= post.title %><br>投稿者：<%= attachment_image_tag post.member, :image, class:"rounded-circle border",  size: "40x40", fallback: "no_image.jpg", style:"margin-left:10px" %><%= post.member.nickname %>
 	      		</div>
 	      	</div>
           <% end %>
@@ -34,3 +34,5 @@
   	</div>
   </div>
 </div>
+
+

@@ -23,7 +23,7 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.member_id = current_member.id
-    @order.save
+    @order.save!
 
     current_member.cart_items.each do |cart_item|
       @order_item = OrderItem.new
@@ -31,7 +31,7 @@ class Public::OrdersController < ApplicationController
       @order_item.number_of_items = cart_item.number_of_items
       @order_item.items_tax_included_price = (cart_item.item.unit_price_without_tax * 1.1).floor
       @order_item.order_id = @order.id
-      @order_item.save!
+      @order_item.save
     end
 
     current_member.cart_items.destroy_all
@@ -49,6 +49,7 @@ class Public::OrdersController < ApplicationController
       @order.postal_code = Member.find(params[:order][:address]).postal_code
       @order.address = Member.find(params[:order][:address]).address
       @order.name = Member.find(params[:order][:address]).last_name + Member.find(params[:order][:address]).first_name
+      @order.nickname = Member.find(params[:order][:address]).nickname
     else
       render 'new'
     end
@@ -61,6 +62,6 @@ class Public::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:payment_method, :address, :postage, :postal_code, :name, :total_fee)
+    params.require(:order).permit(:payment_method, :address, :postage, :postal_code, :name, :total_fee, :nickname)
   end
 end

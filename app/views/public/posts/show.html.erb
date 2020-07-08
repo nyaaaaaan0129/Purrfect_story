@@ -24,10 +24,12 @@
       <div class="post_show">
         <div class="post_show_title">
         <h2><%= @post.title %></h2>
+        <%= link_to public_member_path(@post.member_id) do %>
         <div class="post_member">
           <%= attachment_image_tag @post.member, :image, class:"rounded-circle border",  size: "40x40", fallback: "no_image.jpg" %>
           <%= @post.member.nickname %><%= @post.member.created_at.strftime('%Y/%m/%d') %>
         </div>
+        <% end %>
       </div>
       <div class="post_show_content">
       	<%= @post.content.html_safe %>

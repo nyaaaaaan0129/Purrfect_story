@@ -28,11 +28,11 @@
         		  <td><%= @member.last_name %> <%= current_member.first_name %></td>
         		</tr>
         		<tr>
-        		  <th>お名前（非公開）</th>
+        		  <th>お名前カナ（非公開）</th>
         		  <td><%= @member.last_name_kana %> <%= current_member.first_name_kana %></td>
         		</tr>
         		<tr>
-        		  <th>ニックネーム</th>
+        		  <th>表示されるお名前</th>
         		  <td><%= @member.nickname %></td>
         		</tr>
                 <tr>
@@ -82,7 +82,7 @@
         <div class="member_show_text_2">
           <table class="member_show_text_table table-bordered">
               <tr>
-                <th>ニックネーム</th>
+                <th>お名前</th>
                 <td><%= @member.nickname %></td>
               </tr>
               <tr>
@@ -94,6 +94,9 @@
                     <td><a href="#" style="color:blue;"><%= @member.web_site %></a></td>
                 </tr>
           </table>
+          <% if @member.posts.count >= 1 %>
+            <%= link_to "この会員が投稿した記事一覧", public_posts_path(@member.id, key: 2), class:"member_posts btn btn-primary", data: {"turbolinks" => false} %>
+          <% end %>
         </div>
        </div>
        <% end %>

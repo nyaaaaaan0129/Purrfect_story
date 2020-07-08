@@ -33,6 +33,12 @@
                 <div class="first_post_title"><h4>
                   <%= @post.title %>
                 </h4></div>
+
+                <div class="first_post_user">
+                    投稿者：<%= attachment_image_tag @post.member, :image, size: "40x40", fallback: "no_image.jpg", class:"rounded-circle border" %>
+                    <%= @post.member.nickname %>
+                </div>
+
           </div>
         <% end %>
         <div class="row">
@@ -60,6 +66,12 @@
               <div class="all_post_title">
                 <h5><%= post.title %></h5>
               </div>
+              <% end %>
+              <%= link_to public_member_path(post.member_id) do %>
+              <div class="first_post_user">
+                    投稿者：<%= attachment_image_tag post.member, :image, size: "40x40", fallback: "no_image.jpg", class:"rounded-circle border" %>
+                    <%= post.member.nickname %>
+                </div>
               <% end %>
               <div class="row">
                 <div class="first_post_number_of_favorite">いいね<%= post.favorites.count %>件</div>
