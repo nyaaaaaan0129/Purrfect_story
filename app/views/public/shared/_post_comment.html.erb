@@ -19,7 +19,7 @@
         <% if post_comment.member == current_member %>
         <div class="comment_delete_button">
         <%= link_to "削除", public_post_post_comment_path(post_comment, post_comment.post), method: :delete, remote: true, class:"btn btn-danger btn-sm" %>
-        <% end %>
         </div>
+        <% end %>
       <% end %>
 </div>

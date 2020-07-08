@@ -25,7 +25,7 @@
   	</div>
     <div class="col-8">
       <div class="first_post">
-        <%= link_to public_post_path(@post) do %>
+        <%= link_to public_post_path(@post), data: {"turbolinks" => false} do %>
           <div class="first_post_content">
                 <div class="first_post_image">
                   <%= attachment_image_tag @post, :image, size: "780x500", fallback: "no_image.jpg", class:"first_post_image_tag" %>
@@ -52,7 +52,7 @@
     <div class="col-8">
       <div class="all_posts">
         <% @posts.each do |post| %>
-        <%= link_to public_post_path(post) do %>
+        <%= link_to public_post_path(post), data: {"turbolinks" => false} do %>
             <div class="all_posts_box second">
               <div class="all_post_image">
                 <%= attachment_image_tag post, :image, size: "370x300", fallback: "no_image.jpg", class:"all_post_image_tag" %>

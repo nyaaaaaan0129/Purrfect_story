@@ -58,8 +58,12 @@
     	<div class="col-10">
     	  <div class="order_payment_method">
     		<h5>お届け先</h5>
-    		<%= @order.postal_code %> <%= @order.address %><br>
-    		<%= @order.name %>
+        <% if params[:order][:address_number] == '1' %>
+      		<%= @order.postal_code %> <%= @order.address %><br>
+      		<%= @order.name %>
+        <% else %>
+          <%= Member.find(params[:order][:address]).nickname %>
+        <% end %>
     	  </div>
     	  <div class="order_other_params">
 	    	<%= f.hidden_field :payment_method ,:value => @order.payment_method %>
