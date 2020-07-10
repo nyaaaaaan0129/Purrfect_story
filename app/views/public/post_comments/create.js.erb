@@ -1,2 +1,3 @@
 $('.post_comments').html("<%= j(render 'public/shared/post_comment', post: @post ) %>");
+$("#error_explanation").html("<%= j(render 'public/shared/error') %>")
 $("textarea").val('')

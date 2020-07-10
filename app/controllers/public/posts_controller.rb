@@ -23,7 +23,7 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.member_id = current_member.id
-    if @post.save!
+    if @post.save
       redirect_to root_path
     else
       render 'new'

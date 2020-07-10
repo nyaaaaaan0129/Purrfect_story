@@ -20,6 +20,17 @@
       </div>
   	</div>
     <div class="col-6">
+      <% if @post.errors.any? %>
+        <div class="alert alert-danger">
+          <h2><%= @post.errors.count %> errors </h2>
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+      <% end %>
+
       <%= form_for(@post, url: '/public/posts', html: {method: 'POST'}) do |form| %>
         <div class="field">
           <%= form.label :タイトル %>

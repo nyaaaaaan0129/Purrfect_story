@@ -1,5 +1,6 @@
 
 <h4>コメントを投稿する</h4>
+<div id="error_explanation"></div>
 <%= form_for([@post, @post_comment], url:public_post_post_comments_path(@post), remote: true, html: {method: 'POST'}) do |form| %>
         <div class="field">
           <%= form.text_area :comment, size:"78" %>
