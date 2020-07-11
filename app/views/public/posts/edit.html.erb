@@ -22,7 +22,14 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
-  
+          <div class="add_image">
+          <div class="index_image">
+            <%= attachment_image_tag @post, :image, size:"200x200", id:"index_image", fallback: "no_image.jpg" %>
+          </div>
+          <div class="add_index_image">
+            <%= form.attachment_field :image, placeholder: "インデックス画像" %>
+          </div>
+        </div>
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content, 'data-provider': :summernote %>
