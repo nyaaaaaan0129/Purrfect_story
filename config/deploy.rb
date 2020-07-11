@@ -4,11 +4,13 @@
 lock '~> 3.14.1'
 
 set :application, 'Purrfect_story'
-set :repo_url, 'https://github.com/nyaaaaaan0129/Purrfect_story'
+set :repo_url, 'git@github.com:nyaaaaaan0129/Purrfect_story.git'
+
 
 set :deploy_to, '/home/ec2-user/Purrfect_story'
 set :rbenv_ruby, '2.5.7'
 set :linked_files, %w[config/master.key .env]
+set :branch, ENV['BRANCH'] || "summernote"
 append :linked_dirs, 'log', 'public/system', 'tmp'
 
 # Default branch is :master
