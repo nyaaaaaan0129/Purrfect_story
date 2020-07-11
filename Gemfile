@@ -80,6 +80,8 @@ gem 'refile-mini_magick'
 gem 'simple_form'
 gem 'summernote-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
 
 gem 'dotenv-rails'
 group :production do

@@ -4,7 +4,7 @@
 lock '~> 3.14.1'
 
 set :application, 'Purrfect_story'
-set :repo_url, 'nyaaaaaan0129@gmail.com'
+set :repo_url, 'https://github.com/nyaaaaaan0129/Purrfect_story'
 
 set :deploy_to, '/home/ec2-user/Purrfect_story'
 set :rbenv_ruby, '2.5.7'

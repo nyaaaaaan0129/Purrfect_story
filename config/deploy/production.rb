@@ -56,4 +56,4 @@
 #     # password: "please use keys"
 #   }
 
-server '<IPアドレス>', user: 'ec2-user', roles: %w[app web db]
+server '54.178.119.154', user: 'ec2-user', roles: %w[app web db]
