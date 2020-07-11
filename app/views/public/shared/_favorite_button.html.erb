@@ -1,4 +1,5 @@
-<% if post.favorited_by?(current_member) %>
+<% if member_signed_in? %>
+   <% if post.favorited_by?(current_member) %>
         <%= link_to public_post_favorites_path(post), method: :delete, remote: true do %>
           <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
           <%= post.favorites.count %> いいね
@@ -9,3 +10,4 @@
           <%= post.favorites.count %> いいね
         <% end %>
       <% end %>
+<% end %>
