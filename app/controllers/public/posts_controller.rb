@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Public::PostsController < ApplicationController
-  before_action :authenticate_member!, only: %i[edit new]
+  before_action :authenticate_member!, only: %i[edit new show]
 
   def index
     if params[:key] == '1'
