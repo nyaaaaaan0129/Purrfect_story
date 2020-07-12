@@ -647,6 +647,12 @@ img {
 
 /*members/sessions/new.html.erbここから*/
 
+.log_in_message {
+	text-align:center;
+	margin-bottom:30px;
+	text-decoration:underline;
+	text-decoration-color: #FF4F50;
+}
 
 .new_session_logo {
     margin:150px auto 0px auto;
