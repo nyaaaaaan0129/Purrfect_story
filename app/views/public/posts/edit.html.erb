@@ -32,7 +32,7 @@
       <% end %>
       <%= form_for(@post, url: public_post_path, html: {method: 'PATCH'}) do |form| %>
       <div class="field">
-    <%= form.label :title %>
+    <%= form.label :タイトル %>
     <%= form.text_field :title, class:"col-12" %>
   </div>
           <div class="add_image">
@@ -44,7 +44,7 @@
           </div>
         </div>
   <div class="field">
-    <%= form.label :content %>
+
     <%= form.text_area :content, 'data-provider': :summernote, class:"col-12" %>
   </div>
   <div class="actions">

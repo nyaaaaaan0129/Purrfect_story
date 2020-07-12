@@ -480,25 +480,39 @@ img {
 
 /*orders/thanks.html.erbここから*/
 
+.thanks {
+	border:5px solid grey;
+	width:910px;
+	height:560px;
+}
+
 .thanks-image {
     width:450px;
     height:550px;
 	background-image: image-url("image1.jpg");
 	background-size:cover;
-	margin: 50px auto;
+	float:left;
 }
 
 .thanks-message {
-	width: 400px;
-	height:330px;
-	background-image: image-url("fukidashi.png");
-	background-size:cover;
+    width:450px;
+    height:550px;
+    background-color:white;
+    float:left;
 }
 
 .thanks-text {
-	line-height:350px;
-    margin-left:70px;
+	text-align:center;
+	padding-top:100px;
+	text-decoration:underline;
+	text-decoration-color: #FF4F50;
 }
+
+.top_back {
+    margin-top:50px;
+	text-align:center;
+}
+
 
 /*orders/thanks.html.erbここまで*/
 
