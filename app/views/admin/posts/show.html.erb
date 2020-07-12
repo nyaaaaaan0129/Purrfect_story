@@ -17,6 +17,7 @@
   <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
+      <%= @post.favorites.count %>件のいいね
       <div class="admin_post_show_button">
         <%= link_to "この投稿を削除する", admin_post_path(@post), method: :delete, class:"btn btn-danger" %>
       </div>
