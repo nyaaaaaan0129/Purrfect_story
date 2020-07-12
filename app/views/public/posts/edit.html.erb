@@ -15,8 +15,21 @@
   	  <div class="sidebar">
         <%= render "public/shared/sidebar" %>
   	  </div>
+      <div class="sidebar">
+        <%= render "public/shared/sidebar_favorites" %>
+      </div>
   	</div>
-    <div class="col-9">
+    <div class="col-6">
+       <% if @post.errors.any? %>
+        <div class="alert alert-danger">
+          <h2><%= @post.errors.count %> errors </h2>
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+      <% end %>
       <%= form_for(@post, url: public_post_path, html: {method: 'PATCH'}) do |form| %>
       <div class="field">
     <%= form.label :title %>
