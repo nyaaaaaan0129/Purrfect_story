@@ -1,16 +1,23 @@
 <div class="container">
   <div class="row">
+  		      <div class="admin_item_edit_header">
+	      	<h3>商品編集</h3>
+	      </div>
+  </div>
+  <div class="row">
   	  <div class="col-1"></div>
   	  <div class="col-4">
 	    <div class="admin_item_new">
-	      <div class="admin_item_edit_header">
-	      	<h3>商品編集</h3>
-	      </div>
 	      <div class="admin_item_edit_image">
 	      	 <%= form_for(@item, url: admin_item_path(@item), html: {method: 'PATCH'}) do |form| %>
-	      	 <div class="field">
-             <%= form.attachment_field :image, placeholder: "商品画像" %>
-             </div>
+		        <div class="add_item_image">
+		          <div class="admin_item_image">
+		            <%= attachment_image_tag @item, :image, size:"200x200", id:"index_image", fallback:"no_image.jpg" %>
+		          </div>
+		          <div class="add_item_image">
+		            <%= form.attachment_field :image, placeholder: "アイテム画像" %>
+		          </div>
+		        </div>
 	      </div>
 		</div>
 	  </div>

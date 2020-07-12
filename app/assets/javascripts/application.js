@@ -82,6 +82,17 @@ function stopload(){
 });
 
 
+ $(function(){
+    $('#item_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#index_image").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+});
+
+
 $(function(){
  
   // 画面読込時に実行する。
