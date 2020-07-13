@@ -3,6 +3,7 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_member!
   before_action :request_post?, only: [:confirm]
+  before_action :order_new?, only: [:new]
 
   def index
     @path = Rails.application.routes.recognize_path(request.referer)
@@ -67,7 +68,11 @@ class Public::OrdersController < ApplicationController
     params.require(:order).permit(:payment_method, :address, :postage, :postal_code, :name, :total_fee, :nickname)
   end
 
-    def request_post?
+  def order_new?
+    redirect_to public_cart_items_path, notice: "カートに商品を入れてください。" if current_member.cart_items.blank?
+  end
+
+  def request_post?
     redirect_to new_public_order_path, notice: "もう一度最初から入力してください。" unless request.post?
   end
 end
