@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     when Admin
       admin_admins_path
     when Member
-      public_member_path(resource)
+      root_path
         end
     end
 
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
    protected
 
   def configure_permitted_parameters
-    added_attrs1 = [ :email, :last_name, :first_name, :nickname, :password, :password_confirmation ]
+    added_attrs1 = [ :email, :last_name, :first_name, :nickname, :password, :password_confirmation, :phone_number, :address, :postal_code ]
     added_attrs2 = [ :email, :password, :password_confirmation ]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs1
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs1

@@ -33,6 +33,18 @@
     <%= f.label :nickname %><br />
     <%= f.text_field :nickname, autofocus: true, autocomplete: "ニックネーム", class:"password_field" %>
   </div>
+      <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, autofocus: true, autocomplete: "電話番号", class:"password_field" %>
+  </div>
+        <div class="field">
+    <%= f.label :postal_code %><br />
+    <%= f.text_field :postal_code, autofocus: true, autocomplete: "郵便番号", class:"password_field" %>
+  </div>
+          <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, autofocus: true, autocomplete: "住所　", class:"password_field" %>
+  </div>
 
   <div class="field">
     <%= f.label :password %>
