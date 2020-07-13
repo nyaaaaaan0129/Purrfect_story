@@ -2,6 +2,8 @@
 
 class Public::OrdersController < ApplicationController
   before_action :authenticate_member!
+  before_action :request_post?, only: [:confirm]
+
   def index
     @path = Rails.application.routes.recognize_path(request.referer)
     if @path[:controller] == "public/members" && @path[:action] == "show"
@@ -63,5 +65,9 @@ class Public::OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:payment_method, :address, :postage, :postal_code, :name, :total_fee, :nickname)
+  end
+
+    def request_post?
+    redirect_to new_public_order_path, notice: "もう一度最初から入力してください。" unless request.post?
   end
 end
