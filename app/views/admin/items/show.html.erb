@@ -1,11 +1,13 @@
 <div class="container">
   <div class="row">
+  		      <div class="admin_item_show_header">
+	      	<h3>商品詳細</h3>
+	      </div>
+  </div>
+  <div class="row">
   	  <div class="col-1"></div>
   	  <div class="col-4">
 	    <div class="admin_item_show">
-	      <div class="admin_item_show_header">
-	      	<h3>商品詳細</h3>
-	      </div>
 	      <div class="admin_item_show_image">
 	      	<%= attachment_image_tag @item, :image, size: "300x300", fallback: "no_image_item.png" %>
 	      </div>
