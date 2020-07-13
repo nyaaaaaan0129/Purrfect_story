@@ -9,7 +9,7 @@
         <div class="col-3"></div>
   <div class="row">
   	  <div class="col-1"></div>
-  	  <div class="col-10">
+  	  <div class="col-5">
 	    <div class="public_member_edit">
 	      <div class="public_member_edit_form">
 	      	 <%= form_for(@member, url: public_member_path(@member), html: {method: 'PATCH'}) do |form| %>
@@ -77,13 +77,23 @@
     		  	</td>
     		</tr>
     	  </table>
-	  	  <div class="actions">
-		    <%= form.submit %>
-		  </div>
-		  <% end %>
           </div>
         </div>
+        </div>
+        <div class="col-5">
+        <div class="add_image">
+          <div class="profile_image">
+            <%= image_tag "no_image.jpg", size:"200x200", id:"profile_image" %>
+          </div>
+          <div class="add_profile_image">
+            <%= form.attachment_field :image, placeholder: "profile画像" %>
+          </div>
+        </div>
+          <div class="member_actions">
+            <%= form.submit class:"btn btn-primary" %>
+          </div>
+          <% end %>
+        </div>
 	  <div class="col-1"></div>
-    </div>
   </div>
 </div>

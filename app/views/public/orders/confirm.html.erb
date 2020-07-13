@@ -55,7 +55,7 @@
     </div>
     <div class="row">
     	<div class="col-1"></div>
-    	<div class="col-10">
+    	<div class="col-8">
     	  <div class="order_payment_method">
     		<h5>お届け先</h5>
         <% if params[:order][:address_number] == '1' %>
@@ -67,7 +67,7 @@
     	  </div>
     	  <div class="order_other_params">
 	    	<%= f.hidden_field :payment_method ,:value => @order.payment_method %>
-			<%= f.hidden_field :postage ,:value => 800 %>
+			<%= f.hidden_field :postage ,:value => 300 %>
 			<%= f.hidden_field :address,:value => @order.address %>
 			<%= f.hidden_field :postal_code,:value => @order.postal_code %>
 			<%= f.hidden_field :name,:value => @order.name %>
@@ -79,5 +79,16 @@
 		</div>
 		<% end %>
     	</div>
+      <div class="col-2">
+      <div class="postage_confirm">
+        <div class="total_price_text">送料</div>
+        <div class="total_price_price">300円</div>
+      </div>
+      <div class="total_price">
+        <div class="total_price_text">合計金額</div>
+        <div class="total_price_price"><%= (@total + 300) %>円</div>
+
+      </div>
+      </div>
     </div>
 </div>

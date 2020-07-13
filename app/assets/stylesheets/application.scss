@@ -259,7 +259,6 @@ footer {
 	text-decoration:underline;
 	text-decoration-color: #FF4F50;
 	text-align:center;
-
 }
 
 /*shared/_sidebar.html.erbここまで*/
@@ -464,6 +463,12 @@ img {
 	backgrond-color:white;
 }
 
+.postage {
+	text-decoration:underline;
+	text-decoration-color: #FF4F50;
+	text-align:center;
+}
+
 /*cart_items/index.html.erbここまで*/
 
 
@@ -473,6 +478,10 @@ img {
 
 .public_orders_confirm_table {
 	background-color:white;
+}
+
+.postage_confirm {
+	margin-bottom:20px;
 }
 
 /*orders/confirm.html.erbここから*/
@@ -747,6 +756,14 @@ img {
 
 /*public/members/edit.html.erbここから*/
 
+.add_profile_image {
+	margin-bottom: 10px;
+	margin-left: 35px;
+}
+
+.member_actions {
+	margin-left: 53px;
+}
 
 
 /*public/members/edit.html.erbここまで*/

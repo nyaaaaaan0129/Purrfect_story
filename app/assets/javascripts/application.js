@@ -94,6 +94,16 @@ function stopload(){
 
 
 $(function(){
+    $('#member_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#profile_image").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+});
+
+$(function(){
  
   // 画面読込時に実行する。
   $("#comment_toggle").hide(); // 初期表示で隠しておく
