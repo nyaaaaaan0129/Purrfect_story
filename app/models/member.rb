@@ -17,6 +17,8 @@ class Member < ApplicationRecord
   attachment :image
   validates :last_name, presence: true
   validates :first_name, presence: true
+  validates :postal_code, presence: true
+  validates :address, presence: true
 
   def active_for_authentication?
     super && (is_deleted == false)
