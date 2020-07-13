@@ -67,7 +67,7 @@
           <% if current_member.posts.count >= 1 %>
             <%= link_to "投稿した記事一覧", public_posts_path(key: 1), class:"btn btn-primary", data: {"turbolinks" => false} %>
           <% end %>
-          <%= link_to "登録情報を編集する", edit_public_member_path, class:"btn btn-primary" %>
+          <%= link_to "登録情報を編集する", edit_public_member_path, class:"btn btn-primary", data: {"turbolinks" => false} %>
           </div><br>
         <div class="mypage_withdrawal_button">
           <% if member_signed_in? && @member.id == current_member.id %>
