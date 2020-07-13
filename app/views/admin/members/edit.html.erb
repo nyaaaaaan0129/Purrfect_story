@@ -41,6 +41,22 @@
 			    </div>
     		  	</td>
     		</tr>
+            <tr>
+          <th>自己紹介</th>
+          <td>
+            <div class="field">
+            <%= form.text_area :introduction %>
+          </div>
+            </td>
+        </tr>
+        <tr>
+          <th>webサイト</th>
+          <td>
+            <div class="field">
+            <%= form.text_field :web_site %>
+          </div>
+            </td>
+        </tr>
     		<tr>
     		  <th>Email</th>
     		  <td>
@@ -73,17 +89,6 @@
 			    </div>
     		  	</td>
     		</tr>
-            <tr>
-              <th>会員ステータス</th>
-              <td>
-                <div class="field radio_buttons">
-              <%= form.radio_button :withdrawal_status, "有効" ,checked: "checked" %>　有効
-            </div>
-            <div class="field radio_buttons">
-              <%= form.radio_button :withdrawal_status, "無効" %>　無効
-            </div>
-                </td>
-            </tr>
     	  </table>
 	  	  <div class="actions">
 		    <%= form.submit %>

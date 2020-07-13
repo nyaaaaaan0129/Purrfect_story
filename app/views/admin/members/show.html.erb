@@ -18,6 +18,14 @@
     		  <th>ニックネーム（公開されるお名前）</th>
     		  <td><%= @member.nickname %></td>
     		</tr>
+            <tr>
+                    <th>自己紹介</th>
+                    <td><%= @member.introduction %></td>
+                </tr>
+                <tr>
+                    <th>webサイト</th>
+                    <td><a href="#" style="color:blue;"><%= @member.web_site %></a></td>
+                </tr>
     		<tr>
     		  <th>Email</th>
     		  <td><%= @member.email %></td>
@@ -44,6 +52,7 @@
         <%= link_to "編集", edit_admin_member_path(@member), class:"btn btn-info" %>
         <%= link_to "この会員の注文履歴一覧", admin_orders_path(@member.id), class:"btn btn-info" %>
         <%= link_to "この会員の投稿履歴一覧", admin_posts_path(@member.id), class:"btn btn-info" %>
+        <%= link_to "強制退会", admin_path(@member.id),  method: :put, "data-confirm" => "本当に強制退会しますか？", class:"btn btn-danger" %>
     </div>
   </div>
 </div>

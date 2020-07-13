@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/admins' => 'admins#top'
+    put '/members/:id/destroy' => 'members#destroy'
     resources :items
     resources :item_genres
     resources :post_genres
