@@ -28,7 +28,6 @@
 		  		  <th>商品名</th>
 		  		  <td>
 		  		  	<div class="field">
-			          
 			          <%= form.text_field :item_name %>
 			        </div>
 		  		  </td>
@@ -37,7 +36,6 @@
 		  		  <th>商品説明</th>
 		  		  <td>
 		  		  	<div class="field">
-			          
 			          <%= form.text_area :explanation %>
 			        </div>
 		  		  </td>
@@ -46,7 +44,6 @@
 		  		  <th>ジャンル</th>
 		  		  <td>
 		  		  	<div class="field">
-			          
 			          <%= form.collection_select :item_genre_id, ItemGenre.all, :id, :name %>
 			        </div>
 		  		  </td>
@@ -71,5 +68,5 @@
 	        </div>
 	  <div class="col-1"></div>
   </div>
-
+</div>
 </div>
