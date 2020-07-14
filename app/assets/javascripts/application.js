@@ -58,12 +58,10 @@ $(document).ready(function () {
 
 $(function() {
   var h = $(window).height();
-  
   $('#wrap').css('display','none');
   $('#loader-bg ,#loader').height(h).css('display','block');
 });
-  
-$(window).load(function () { 
+$(window).load(function () {
   $('#loader-bg').delay(1800).fadeOut(1600);
   $('#loader').delay(1200).fadeOut(600);
   $('#wrap').css('display', 'block');
