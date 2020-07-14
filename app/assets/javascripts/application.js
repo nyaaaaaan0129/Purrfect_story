@@ -58,17 +58,7 @@ $(window).load(function () {
   $('#loader').delay(1200).fadeOut(600);
   $('#wrap').css('display', 'block');
 });
-  
 
-$(function(){
-  setTimeout('stopload()',10000);
-});
-  
-function stopload(){
-  $('#wrap').css('display','block');
-  $('#loader-bg').delay(900).fadeOut(800);
-  $('#loader').delay(600).fadeOut(300);
-}
 
  $(function(){
     $('#post_image').on('change', function (e) {
