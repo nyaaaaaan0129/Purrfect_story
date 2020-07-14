@@ -65,13 +65,15 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'bcrypt_pbkdf'
 gem 'bootstrap'
 gem 'devise'
+gem 'ed25519'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'pry-byebug', group: :development
@@ -80,8 +82,6 @@ gem 'refile-mini_magick'
 gem 'simple_form'
 gem 'summernote-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'ed25519'
-gem 'bcrypt_pbkdf'
 
 gem 'dotenv-rails'
 group :production do

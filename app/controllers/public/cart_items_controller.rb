@@ -18,20 +18,20 @@ class Public::CartItemsController < ApplicationController
         @cart_item = CartItem.new(cart_item_params)
         @cart_item.member_id = current_member.id
         if @cart_item.save
-        redirect_to public_cart_items_path
+          redirect_to public_cart_items_path
         else
-         @item = Item.find(params[:cart_item][:item_id].to_i)
-      render "public/items/show"
+          @item = Item.find(params[:cart_item][:item_id].to_i)
+          render 'public/items/show'
       end
         end
     else
       @cart_item = CartItem.new(cart_item_params)
       @cart_item.member_id = current_member.id
       if @cart_item.save
-      redirect_to public_cart_items_path
+        redirect_to public_cart_items_path
       else
-      @item = Item.find(params[:cart_item][:item_id].to_i)
-      render "public/items/show"
+        @item = Item.find(params[:cart_item][:item_id].to_i)
+        render 'public/items/show'
       end
   end
   end

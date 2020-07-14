@@ -23,10 +23,10 @@ class Admin::MembersController < ApplicationController
   def destroy
     @member = Member.find(params[:id])
     if @member.update!(is_deleted: true, withdrawal_status: 1)
-    flash[:notice] = '会員が削除されました。'
-    redirect_to admin_members_path
+      flash[:notice] = '会員が削除されました。'
+      redirect_to admin_members_path
     else
-    render "show"
+      render 'show'
   end
   end
 

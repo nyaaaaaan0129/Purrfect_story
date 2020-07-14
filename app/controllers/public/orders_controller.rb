@@ -7,11 +7,11 @@ class Public::OrdersController < ApplicationController
 
   def index
     @path = Rails.application.routes.recognize_path(request.referer)
-    if @path[:controller] == "public/members" && @path[:action] == "show"
-       @orders = Order.where(member_id: params[:format])
-    else
-      @orders = Order.all
-    end
+    @orders = if @path[:controller] == 'public/members' && @path[:action] == 'show'
+                Order.where(member_id: params[:format])
+              else
+                Order.all
+              end
   end
 
   def show
@@ -69,10 +69,10 @@ class Public::OrdersController < ApplicationController
   end
 
   def order_new?
-    redirect_to public_cart_items_path, notice: "カートに商品を入れてください。" if current_member.cart_items.blank?
+    redirect_to public_cart_items_path, notice: 'カートに商品を入れてください。' if current_member.cart_items.blank?
   end
 
   def request_post?
-    redirect_to new_public_order_path, notice: "もう一度最初から入力してください。" unless request.post?
+    redirect_to new_public_order_path, notice: 'もう一度最初から入力してください。' unless request.post?
   end
 end
