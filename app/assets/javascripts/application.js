@@ -45,6 +45,16 @@ $(document).ready(function () {
 });
 
 
+  $(function() {
+  $('#back a').on('click',function(event){
+    $('body, html').animate({
+      scrollTop:0
+    }, 800);
+    event.preventDefault();
+  });
+});
+
+
 
 $(function() {
   var h = $(window).height();
