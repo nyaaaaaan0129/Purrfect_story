@@ -74,10 +74,6 @@
       <%= f.hidden_field :nickname,:value => @order.nickname %>
 			<%= f.hidden_field :total_fee ,:value => @total %>
 		  </div>
-		  <div class="text-center">
-			<%= f.submit "購入を確定する", class: "btn btn-success text-cenrer btn-lg" %>
-		</div>
-		<% end %>
     	</div>
       <div class="col-2">
       <div class="postage_confirm">
@@ -89,6 +85,14 @@
         <div class="total_price_price"><%= (@total + 300) %>円</div>
 
       </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+              <div class="button-center">
+      <%= f.submit "購入を確定する", class: "btn btn-success text-center btn-lg" %>
+    </div>
+    <% end %>
       </div>
     </div>
 </div>

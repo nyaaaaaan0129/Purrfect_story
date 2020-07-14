@@ -22,7 +22,6 @@
 
 $(document).ready(function () {
   $("#theTarget").skippr({
-      // スライドショーの変化 ("fade" or "slide")
       transition : 'slide',
       // 変化に係る時間(ミリ秒)
       speed : 1000,
@@ -54,13 +53,13 @@ $(function() {
   $('#loader-bg ,#loader').height(h).css('display','block');
 });
   
-$(window).load(function () { //全ての読み込みが完了したら実行
+$(window).load(function () { 
   $('#loader-bg').delay(1800).fadeOut(1600);
   $('#loader').delay(1200).fadeOut(600);
   $('#wrap').css('display', 'block');
 });
   
-//10秒たったら強制的にロード画面を非表示
+
 $(function(){
   setTimeout('stopload()',10000);
 });
@@ -104,12 +103,8 @@ $(function(){
 });
 
 $(function(){
- 
-  // 画面読込時に実行する。
-  $("#comment_toggle").hide(); // 初期表示で隠しておく
-
-  // 指定ボタンを押下すると処理を開始する
+  $("#comment_toggle").hide(); 
   $(document).on("click", "#comment_hyouji", function() {
-    $("#comment_toggle").toggle(); // div領域を表示
+    $("#comment_toggle").toggle(); 
   });
 });
