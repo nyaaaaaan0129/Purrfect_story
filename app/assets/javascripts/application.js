@@ -109,7 +109,7 @@ $(function(){
   $("#comment_toggle").hide(); // 初期表示で隠しておく
 
   // 指定ボタンを押下すると処理を開始する
-  $("#comment_hyouji").on("click", function() {
+  $(document).on("click", "#comment_hyouji", function() {
     $("#comment_toggle").toggle(); // div領域を表示
   });
 });
