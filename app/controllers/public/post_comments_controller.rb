@@ -7,6 +7,7 @@ class Public::PostCommentsController < ApplicationController
     @post_comment.member_id = current_member.id
     @post_comment.post_id = @post.id
     @post_comment.score = Language.get_data(post_comment_params[:comment])
+    byebug
     @post_comment.save
     @post_comments = @post.post_comments
   end
