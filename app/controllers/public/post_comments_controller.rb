@@ -4,7 +4,6 @@ class Public::PostCommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @post_comment = PostComment.new(post_comment_params)
-    byebug
     @post_comment.member_id = current_member.id
     @post_comment.post_id = @post.id
     @post_comment.score = Language.get_data(post_comment_params[:comment])
