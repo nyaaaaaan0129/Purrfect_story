@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     get '/orders/thanks' => 'orders#thanks'
     get '/members/withdrawal' => 'members#withdrawal'
     put '/members/:id/destroy' => 'members#destroy'
+    get '/posts/following_post' => 'posts#following_post'
     resources :items
     resources :item_genres
     resources :cart_items

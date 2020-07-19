@@ -33,11 +33,13 @@
         <div class="post_genre">
           ジャンル：<%= @post.post_genre.name %>
         </div>
-        <h4>
-          <% @post.tags.each do |tag| %>
-            <span class="label label-primary"><%= tag.name %></span>
-          <% end %>
-        </h4>
+        <% if false %>
+          <h4>
+            <% @post.tags.each do |tag| %>
+              <span class="label label-primary"><%= tag.name %></span>
+            <% end %>
+          </h4>
+        <% end %>
       </div>
       <div class="post_show_content">
       	<%= @post.content.html_safe %>

@@ -34,6 +34,16 @@ class Public::MembersController < ApplicationController
 
   def withdrawal; end
 
+  def following
+    @member  = Member.find(params[:member_id])
+    @members = @member.following
+  end
+
+  def followers
+    @member  = Member.find(params[:member_id])
+    @members = @member.followers
+  end
+
   private
 
   def member_params

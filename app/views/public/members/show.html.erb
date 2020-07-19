@@ -21,6 +21,9 @@
         <div class="member_show_image">
           <%= attachment_image_tag @member, :image, class:"rounded-circle border",  size: "400x400", fallback: "no_image.jpg" %>
         </div>
+        <section class="stats">
+        <%= render 'stats' %>
+      </section>
         <div class="member_show_text">
         	<table class="member_show_text_table table-bordered">
         		<tr>

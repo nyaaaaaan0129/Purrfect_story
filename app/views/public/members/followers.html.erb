@@ -1,0 +1,53 @@
+    <div class="container-fluid">
+      <div class="row">
+        <div class="main-visual">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+      <% if @member == current_member %>
+      <h3 class="all_posts_header">フォロワー会員一覧</h3>
+      <% else %>
+      <h3 class="all_posts_header"><%= @member.nickname %>さんのフォロワー会員一覧</h3>
+      <% end %>
+    </div>
+    <div class="col-3"></div>
+    </div>
+  <div class="row">
+    <div class="col-3">
+      <div class="sidebar">
+        <%= render "public/shared/sidebar" %>
+      </div>
+      <div class="sidebar">
+        <%= render "public/shared/sidebar_favorites" %>
+      </div>
+    </div>
+    <div class="col-6">
+<div class="follow_members_index">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th></th>
+              <th>ニックネーム</th>
+              <th>自己紹介</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @members.each do |member| %>
+            <tr>
+              <td><%= attachment_image_tag member, :image, class:"rounded-circle border",  size: "40x40", fallback: "no_image.jpg" %></td>
+              <td><%= member.nickname %></td>
+              <td><%= member.introduction %></td>
+              <td>
+                <%= link_to "会員詳細", public_member_path(member), class:"btn btn-info" %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+

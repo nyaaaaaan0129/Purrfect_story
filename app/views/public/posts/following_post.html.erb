@@ -1,0 +1,37 @@
+    <div class="container-fluid">
+      <div class="row">
+        <div class="main-visual">
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <h3>フォローしている会員の投稿一覧</h3>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <div class="row">
+  	<div class="col-3">
+  	  <div class="sidebar">
+        <%= render "public/shared/sidebar" %>
+  	  </div>
+      <div class="sidebar">
+        <%= render "public/shared/sidebar_favorites" %>
+      </div>
+  	</div>
+    <div class="col-9">
+      <div class="all_posts">
+          <div class="all_posts_box second">
+            <% @posts.each do |post| %>
+            <div class="all_post_image">
+              <%= attachment_image_tag post, :image, size: "370x300", fallback: "no_image_item.png" %>
+            </div>
+            <div class="all_post_title">
+              <h5><%= post.title %></h5>
+            </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

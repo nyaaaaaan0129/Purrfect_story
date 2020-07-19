@@ -63,9 +63,15 @@ class Public::PostsController < ApplicationController
     @favorites = Favorite.where(member_id: current_member.id)
   end
 
+  def following_post
+    @follow_members = current_member.following
+    @posts = Post.where(member_id: @follow_members).order(created_at: :DESC)
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:title, :content, :image, :post_genre_id, :member_id)
   end
 end
+
