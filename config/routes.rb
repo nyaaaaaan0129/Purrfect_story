@@ -47,8 +47,11 @@ Rails.application.routes.draw do
       resources :post_comments, only: %i[create destroy]
       resource :favorites, only: %i[create destroy]
     end
-    resources :members, only: %i[edit update show]
+    resources :members, only: %i[edit update show] do
+      get :following, :followers
+    end
     resources :orders
     resources :order_items
+    resources :relationships, only: [:create, :destroy]
   end
 end

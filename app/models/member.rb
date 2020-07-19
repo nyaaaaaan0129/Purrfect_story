@@ -20,6 +20,26 @@ class Member < ApplicationRecord
   validates :postal_code, presence: true
   validates :address, presence: true
 
+  has_many :active_relationships, class_name:  "Relationship", foreign_key: "follower_id", dependent:   :destroy
+  has_many :passive_relationships, class_name:  "Relationship", foreign_key: "followed_id", dependent:   :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
+
+  # ユーザーをフォローする
+  def follow(other_member)
+    following << other_member
+  end
+
+  # ユーザーをフォロー解除する
+  def unfollow(other_member)
+    active_relationships.find_by(followed_id: other_member.id).destroy
+  end
+
+  # 現在のユーザーがフォローしてたらtrueを返す
+  def following?(other_member)
+    following.include?(other_member)
+  end
+
   def active_for_authentication?
     super && (is_deleted == false)
   end
