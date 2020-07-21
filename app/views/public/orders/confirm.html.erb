@@ -63,6 +63,10 @@
       		<%= @order.name %>
         <% else %>
           <%= Member.find(params[:order][:address]).nickname %>
+          <div class="information">
+            <p>＊他の会員に商品を送る場合には、個人情報保護のためこちらに住所は表示されませんが、<br>
+            注文情報として送り先の住所は自動的に保存されおりますのでご安心ください。</p>
+          </div>
         <% end %>
     	  </div>
     	  <div class="order_other_params">
