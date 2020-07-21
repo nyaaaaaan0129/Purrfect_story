@@ -40,7 +40,9 @@ Rails.application.routes.draw do
     get '/members/withdrawal' => 'members#withdrawal'
     put '/members/:id/destroy' => 'members#destroy'
     get '/posts/following_post' => 'posts#following_post'
-    resources :items
+    resources :items do
+      get :search, on: :collection
+    end
     resources :item_genres
     resources :cart_items
     resources :post_genres

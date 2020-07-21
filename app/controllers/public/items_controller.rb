@@ -14,6 +14,11 @@ class Public::ItemsController < ApplicationController
 
   def create; end
 
+  def search
+    @items = Item.where(item_genre_id: params[:format])
+    render "index"
+  end
+
   private
 
   def item_params
