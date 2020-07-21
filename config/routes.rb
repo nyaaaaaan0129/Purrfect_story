@@ -50,6 +50,7 @@ Rails.application.routes.draw do
       resources :post_comments, only: %i[create destroy]
       resource :favorites, only: %i[create destroy]
       get :search, on: :collection
+      get :tag, on: :collection
     end
     resources :members, only: %i[edit update show] do
       get :following, :followers

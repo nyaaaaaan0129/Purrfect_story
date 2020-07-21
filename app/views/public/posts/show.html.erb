@@ -37,7 +37,7 @@
         <%= attachment_image_tag @post, :image, class:"img-square border",  size: "300x300", fallback: "no_image.jpg" %>
           <h4>
             <% @post.tags.each do |tag| %>
-              <span class="btn btn-primary btn-sm"><%= tag.name %></span>
+               <%= link_to tag_public_posts_path(tag.name) do %><span class="btn btn-primary btn-sm"><%= tag.name %></span><% end %>
             <% end %>
           </h4>
         </div>

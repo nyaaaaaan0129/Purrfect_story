@@ -74,6 +74,13 @@ class Public::PostsController < ApplicationController
     render "index"
   end
 
+  def tag
+    @tag = Tag.where(name: params[:format])
+    @tag.each do |tag|
+      @posts = Post.where(id: tag.post_id)
+    end
+  end
+
   private
 
   def post_params

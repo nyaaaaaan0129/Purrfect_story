@@ -22,6 +22,7 @@
     <div class="col-9">
       <div class="all_posts">
             <% @posts.each do |post| %>
+            <%= link_to public_post_path(post), data: {"turbolinks" => false} do %>
             <div class="all_posts_box second">
             <div class="all_post_image">
               <%= attachment_image_tag post, :image, size: "370x300", fallback: "no_image_item.png" %>
@@ -29,7 +30,14 @@
             <div class="all_post_title">
               <h5><%= post.title %></h5>
             </div>
-          </div>
+          <% end %>
+          <%= link_to public_member_path(post.member_id) do %>
+              <div class="first_post_user">
+                    投稿者：<%= attachment_image_tag post.member, :image, size: "40x40", fallback: "no_image.jpg", class:"rounded-circle border" %>
+                    <%= post.member.nickname %>
+                </div>
+              <% end %>
+            </div>
             <% end %>
       </div>
     </div>
