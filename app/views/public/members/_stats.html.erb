@@ -1,14 +1,18 @@
 <div class="stats">
+  <div class="following">
   <%= link_to public_member_following_path(@member) do %>
     <strong id="following" class="stat">
       <%= @member.following.count %>
     </strong>
-    following
+    フォロー
   <% end %>
+</div>
+<div class="followers">
   <%= link_to public_member_followers_path(@member) do %>
     <strong id="followers" class="stat">
       <%= @member.followers.count %>
     </strong>
-    followers
+    フォロワー
   <% end %>
+</div>
 </div>
