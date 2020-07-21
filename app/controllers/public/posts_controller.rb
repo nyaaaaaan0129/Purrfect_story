@@ -76,9 +76,6 @@ class Public::PostsController < ApplicationController
 
   def tag
     @tag = Tag.where(name: params[:format])
-    @tag.each do |tag|
-      @posts = Post.where(id: tag.post_id)
-    end
   end
 
   private
