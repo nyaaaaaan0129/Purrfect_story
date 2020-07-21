@@ -24,10 +24,10 @@ class Public::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.member_id = current_member.id
     if @post.save
-      # tags = Vision.get_image_data(@post.image)
-      # tags.each do |tag|
-      #   @post.tags.create(name: tag)
-      # end
+      tags = Vision.get_image_data(@post.image)
+      tags.each do |tag|
+        @post.tags.create(name: tag)
+      end
       redirect_to root_path
     else
       render 'new'
@@ -66,6 +66,12 @@ class Public::PostsController < ApplicationController
   def following_post
     @follow_members = current_member.following
     @posts = Post.where(member_id: @follow_members).order(created_at: :DESC)
+  end
+
+  def search
+    @post = Post.where(post_genre_id: params[:format]).last
+    @posts = Post.where(post_genre_id: params[:format]).order(id: :desc).offset(1)
+    render "index"
   end
 
   private

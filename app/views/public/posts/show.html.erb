@@ -33,13 +33,14 @@
         <div class="post_genre">
           ジャンル：<%= @post.post_genre.name %>
         </div>
-        <% if false %>
+        <div class="show_index_image">
+        <%= attachment_image_tag @post, :image, class:"img-square border",  size: "300x300", fallback: "no_image.jpg" %>
           <h4>
             <% @post.tags.each do |tag| %>
-              <span class="label label-primary"><%= tag.name %></span>
+              <span class="btn btn-primary btn-sm"><%= tag.name %></span>
             <% end %>
           </h4>
-        <% end %>
+        </div>
       </div>
       <div class="post_show_content">
       	<%= @post.content.html_safe %>

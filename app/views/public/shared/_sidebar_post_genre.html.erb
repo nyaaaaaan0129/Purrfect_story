@@ -1,0 +1,20 @@
+<div class="sidebar_table">
+	<table class="table table-borderless table-hover">
+	  <thead>
+	    <tr>
+	      <th class="sidebar_head">お話のジャンルで記事を絞る</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% PostGenre.all.each do |post_genre| %>
+	  	<tr>
+	  		  <div class="random_item_content">
+				<td>
+				  <%= link_to post_genre.name, search_public_posts_path(post_genre.id) %>
+				</td>
+              </div>
+	    </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+</div>
