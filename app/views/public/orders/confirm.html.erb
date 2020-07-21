@@ -59,10 +59,10 @@
     	  <div class="order_payment_method">
     		<h5>お届け先</h5>
         <% if params[:order][:address_number] == '1' %>
-      		<%= @order.postal_code %> <%= @order.address %><br>
-      		<%= @order.name %>
+      		<h4><%= @order.postal_code %> <%= @order.address %></h4><br>
+      		<h4><%= @order.name %></h4>
         <% else %>
-          <%= Member.find(params[:order][:address]).nickname %>
+          <h4><%= Member.find(params[:order][:address]).nickname %></h4>
           <div class="information">
             <p>＊他の会員に商品を送る場合には、個人情報保護のためこちらに住所は表示されませんが、<br>
             *注文情報として送り先の住所は自動的に保存されておりますのでご安心ください。</p>
