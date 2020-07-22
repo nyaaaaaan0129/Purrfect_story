@@ -15,4 +15,5 @@ class Post < ApplicationRecord
 
   validates :title, presence: true, length:{ maximum: 38, message: '38文字以内です'}
   validates :content, presence: true
+  validates :image, presence: true
 end

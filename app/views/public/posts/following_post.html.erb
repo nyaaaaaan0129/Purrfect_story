@@ -25,7 +25,7 @@
             <%= link_to public_post_path(post), data: {"turbolinks" => false} do %>
             <div class="all_posts_box second">
             <div class="all_post_image">
-              <%= attachment_image_tag post, :image, size: "370x300", fallback: "no_image_item.png" %>
+              <%= attachment_image_tag post, :image, size: "370x300", fallback: "no_image_item.jpg" %>
             </div>
             <div class="all_post_title">
               <h5><%= post.title %></h5>
