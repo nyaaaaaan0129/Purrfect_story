@@ -9,7 +9,7 @@
 	  	<% Item.order(id: :ASC).limit(3).each do |new_item| %>
 	  	<tr>
 	  		<td>
-	  			<%= attachment_image_tag new_item, :image, size: "50x40", fallback: "no_image_item.png" %>
+	  			<%= attachment_image_tag new_item, :image, size: "50x40", fallback: "no_image_item.jpg" %>
 	  		</td>
 			<td>
 			   <%= link_to public_item_path(new_item) do %>

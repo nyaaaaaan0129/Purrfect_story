@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   belongs_to :member, optional: true
   has_many :favorites, dependent: :destroy
   has_many :post_comments, dependent: :destroy
-  has_many :tags
+  has_many :tags, dependent: :destroy
   belongs_to :post_genre, optional: true
 
   def favorited_by?(member)
