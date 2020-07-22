@@ -6,7 +6,7 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	  	<% Item.order("RAND()").limit(3).each do |random| %>
+	  	<% Item.order("RANDOM()").limit(3).each do |random| %>
 	  	<tr>
 	  		  <div class="random_item_content">
 	  		    <td>
