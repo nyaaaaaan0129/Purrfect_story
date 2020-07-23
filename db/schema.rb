@@ -105,14 +105,8 @@ ActiveRecord::Schema.define(version: 2020_07_20_104809) do
     t.string "nickname"
   end
 
-  create_table "post_comments", force: :cascade do |t|
-    t.text "comment"
-    t.integer "post_id"
-    t.integer "member_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.decimal "score"
-  end
+# Could not dump table "post_comments" because of following StandardError
+#   Unknown type 'flaot' for column 'score'
 
   create_table "post_genres", force: :cascade do |t|
     t.string "name"
